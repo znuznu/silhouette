@@ -6,9 +6,12 @@ import { FaRegArrowAltCircleUp } from '@react-icons/all-files/fa/FaRegArrowAltCi
 import PropTypes from 'prop-types';
 
 const Icon = styled.a`
-    margin: 1rem;
     cursor: pointer;
     color: ${(props) => props.theme.global.primary};
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    right: 30px;
 `;
 
 const GoTo = (props) => {

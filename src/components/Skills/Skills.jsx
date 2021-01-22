@@ -26,12 +26,12 @@ import { SiGithub } from '@react-icons/all-files/si/SiGithub';
 import { SiGitlab } from '@react-icons/all-files/si/SiGitlab';
 
 import SkillList from 'src/components/Skills/SkillList/SkillList';
-import GoTo from 'src/components/common/GoTo/GoTo';
 
 const Container = styled.div`
     height: 100vh;
     display: flex;
     flex-direction: column;
+    margin: 0 7rem 0 7rem;
 `;
 
 const Content = styled.div`
@@ -41,6 +41,7 @@ const Content = styled.div`
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
+    margin-bottom: 1.5rem;
 `;
 
 const Heading = styled.h1`
@@ -48,11 +49,6 @@ const Heading = styled.h1`
     font-size: 6rem;
     margin: 0;
     color: ${(props) => props.theme.global.primary};
-`;
-
-const Footer = styled.div`
-    display: flex;
-    justify-content: flex-end;
 `;
 
 const SKILLS = {
@@ -96,15 +92,12 @@ const SKILLS = {
 const Skills = () => {
     return (
         <Container id={'skills'}>
-            <Heading>Skills</Heading>
+            {/* <Heading>Skills</Heading> */}
             <Content>
                 <SkillList skill={SKILLS.frontend} />
                 <SkillList skill={SKILLS.backend} rtl={true} />
                 <SkillList skill={SKILLS.devops} />
             </Content>
-            <Footer>
-                <GoTo section={'#about'} />
-            </Footer>
         </Container>
     );
 };
