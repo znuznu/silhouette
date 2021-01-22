@@ -13,12 +13,6 @@ import useTheme from 'src/hooks/useTheme';
 import GlobalStyle from 'src/theme/GlobalStyle';
 import GoTo from 'src/components/common/GoTo/GoTo';
 
-// const Footer = styled.div`
-//     display: flex;
-//     justify-content: flex-end;
-//     position: ;
-// `;
-
 const IndexPage = () => {
     const { theme, isLoaded } = useTheme();
     const [selectedTheme, setSelectedTheme] = useState(theme);

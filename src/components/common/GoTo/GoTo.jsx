@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { IconContext } from '@react-icons/all-files';
 import { FaRegArrowAltCircleUp } from '@react-icons/all-files/fa/FaRegArrowAltCircleUp';
 
-import PropTypes from 'prop-types';
+import useWindowSize from 'src/hooks/useWindowSize';
+import useScrollPosition from 'src/hooks/useScrollPosition';
 
 const Icon = styled.a`
     cursor: pointer;
@@ -16,6 +18,11 @@ const Icon = styled.a`
 
 const GoTo = (props) => {
     const { section } = props;
+
+    const { size } = useWindowSize();
+    const { position } = useScrollPosition();
+
+    if (position.y < size.height / 1.5) return null;
 
     return (
         <Icon href={section} rel="noopener noreferrer">
