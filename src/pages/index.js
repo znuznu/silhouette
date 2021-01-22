@@ -18,7 +18,7 @@ const IndexPage = () => {
 
     useEffect(() => {
         setSelectedTheme(theme);
-    }, [isLoaded]);
+    }, [isLoaded, theme]);
 
     return (
         <>

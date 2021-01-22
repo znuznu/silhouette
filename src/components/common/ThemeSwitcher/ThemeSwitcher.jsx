@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import { IconContext } from '@react-icons/all-files';
-import { CgSun } from '@react-icons/all-files/cg/CgSun';
+import { IoSunny } from '@react-icons/all-files/io5/IoSunny';
+import { IoMoon } from '@react-icons/all-files/io5/IoMoon';
 
 import ThemeContext from 'src/context/ThemeContext';
 import useTheme from 'src/hooks/useTheme';
@@ -14,6 +15,8 @@ const Button = styled.button`
     cursor: pointer;
     background: none;
     border: none;
+    margin: 'auto 0 auto 0';
+    vertical-align: middle;
 `;
 
 const ThemeSwitcher = () => {
@@ -21,15 +24,18 @@ const ThemeSwitcher = () => {
     const { theme, toggleTheme } = useTheme();
 
     const handleClick = () => {
-        console.log(themeContext);
         const newTheme = toggleTheme();
         themeContext.setSelectedTheme(newTheme);
     };
 
     return (
-        <IconContext.Provider value={{ size: '2rem' }}>
+        <IconContext.Provider value={{ size: '1.5rem', margin: 'auto 0 auto 0' }}>
             <Button>
-                <CgSun onClick={handleClick} />
+                {theme && theme.type === 'dark' ? (
+                    <IoSunny onClick={handleClick} />
+                ) : (
+                    <IoMoon onClick={handleClick} />
+                )}
             </Button>
         </IconContext.Provider>
     );

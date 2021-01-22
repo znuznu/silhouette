@@ -1,18 +1,34 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
+import { IconContext } from '@react-icons/all-files';
+import { SiAngular } from '@react-icons/all-files/si/SiAngular';
+
 import GoTo from 'src/components/common/GoTo/GoTo';
+
+const Container = styled.div`
+    background-color: lightgreen;
+    height: 100vh;
+`;
+
+const Heading = styled.h1`
+    font-family: 'Hind Madurai 500';
+    font-size: 6rem;
+    margin: 0;
+`;
 
 const SKILLS = {
     frontend: [
-        { title: 'Angular' },
-        { title: 'React' },
-        { title: 'yarn' },
-        { title: 'npm' },
-        { title: 'Webpack' },
-        { title: 'TypeScript' },
-        { title: 'JavaScript' },
-        { title: 'HTML' },
-        { title: 'CSS/SCSS' }
+        { title: 'Angular', component: <SiAngular /> },
+        { title: 'React', component: <SiAngular /> },
+        { title: 'yarn', component: <SiAngular /> },
+        { title: 'npm', component: <SiAngular /> },
+        { title: 'Webpack', component: <SiAngular /> },
+        { title: 'TypeScript', component: <SiAngular /> },
+        { title: 'JavaScript', component: <SiAngular /> },
+        { title: 'HTML', component: <SiAngular /> },
+        { title: 'CSS/SCSS', component: <SiAngular /> }
     ],
     backend: [
         { title: 'Java' },
@@ -34,8 +50,8 @@ const SKILLS = {
 
 const Skills = () => {
     return (
-        <>
-            <h1>Skills</h1>
+        <Container>
+            <Heading>Skills</Heading>
             <ul>
                 {SKILLS.frontend.map((skill) => (
                     <li key={skill.title}>{skill.title}</li>
@@ -52,7 +68,7 @@ const Skills = () => {
                 ))}
             </ul>
             <GoTo></GoTo>
-        </>
+        </Container>
     );
 };
 

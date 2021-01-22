@@ -4,8 +4,9 @@ export const dark = {
         color: 'white'
     },
     global: {
-        primary: 'black',
-        secondary: 'white'
+        primary: 'white',
+        secondary: 'black',
+        bgColor: 'black'
     },
     container: { backgroundColor: 'black' }
 };
@@ -16,8 +17,9 @@ export const light = {
         color: 'black'
     },
     global: {
-        primary: 'white',
-        secondary: 'black'
+        primary: 'black',
+        secondary: 'white',
+        bgColor: 'white'
     },
     container: { backgroundColor: 'white' }
 };
