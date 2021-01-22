@@ -49,8 +49,10 @@ const EXTERNALS = [
 const About = () => {
     const themeContext = useContext(ThemeContext);
 
+    /* TODO: maybe change the id of the container here */
+
     return (
-        <Container>
+        <Container id={'about'}>
             <Content>
                 <Heading>Arthur, {<br />} full stack developer.</Heading>
                 <IconContext.Provider

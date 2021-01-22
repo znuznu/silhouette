@@ -2,72 +2,109 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { IconContext } from '@react-icons/all-files';
 import { SiAngular } from '@react-icons/all-files/si/SiAngular';
+import { SiReact } from '@react-icons/all-files/si/SiReact';
+import { SiYarn } from '@react-icons/all-files/si/SiYarn';
+import { SiNpm } from '@react-icons/all-files/si/SiNpm';
+import { SiWebpack } from '@react-icons/all-files/si/SiWebpack';
+import { SiJavascript } from '@react-icons/all-files/si/SiJavascript';
+import { SiTypescript } from '@react-icons/all-files/si/SiTypescript';
+import { SiCss3 } from '@react-icons/all-files/si/SiCss3';
+import { SiHtml5 } from '@react-icons/all-files/si/SiHtml5';
 
+import { SiJava } from '@react-icons/all-files/si/SiJava';
+import { SiSpring } from '@react-icons/all-files/si/SiSpring';
+import { SiPostgresql } from '@react-icons/all-files/si/SiPostgresql';
+import { SiPython } from '@react-icons/all-files/si/SiPython';
+import { SiNodeDotJs } from '@react-icons/all-files/si/SiNodeDotJs';
+
+import { SiGit } from '@react-icons/all-files/si/SiGit';
+import { SiApachemaven } from '@react-icons/all-files/si/SiApachemaven';
+import { SiDocker } from '@react-icons/all-files/si/SiDocker';
+import { SiSonarqube } from '@react-icons/all-files/si/SiSonarqube';
+import { SiGithub } from '@react-icons/all-files/si/SiGithub';
+import { SiGitlab } from '@react-icons/all-files/si/SiGitlab';
+
+import SkillList from 'src/components/Skills/SkillList/SkillList';
 import GoTo from 'src/components/common/GoTo/GoTo';
 
 const Container = styled.div`
-    background-color: lightgreen;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+`;
+
+const Content = styled.div`
+    padding: 0 2rem 0 2rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 `;
 
 const Heading = styled.h1`
     font-family: 'Hind Madurai 500';
     font-size: 6rem;
     margin: 0;
+    color: ${(props) => props.theme.global.primary};
+`;
+
+const Footer = styled.div`
+    display: flex;
+    justify-content: flex-end;
 `;
 
 const SKILLS = {
-    frontend: [
-        { title: 'Angular', component: <SiAngular /> },
-        { title: 'React', component: <SiAngular /> },
-        { title: 'yarn', component: <SiAngular /> },
-        { title: 'npm', component: <SiAngular /> },
-        { title: 'Webpack', component: <SiAngular /> },
-        { title: 'TypeScript', component: <SiAngular /> },
-        { title: 'JavaScript', component: <SiAngular /> },
-        { title: 'HTML', component: <SiAngular /> },
-        { title: 'CSS/SCSS', component: <SiAngular /> }
-    ],
-    backend: [
-        { title: 'Java' },
-        { title: 'Spring Boot 2' },
-        { title: 'Hibernate' },
-        { title: 'PostgreSQL' },
-        { title: 'Python' },
-        { title: 'Node.js' }
-    ],
-    devops: [
-        { title: 'Git' },
-        { title: 'Maven' },
-        { title: 'Docker' },
-        { title: 'Gitlab CI/CD' },
-        { title: 'Github Actions' },
-        { title: 'SonarQube' }
-    ]
+    frontend: {
+        title: 'frontend',
+        skills: [
+            { title: 'Angular', icon: <SiAngular /> },
+            { title: 'React', icon: <SiReact /> },
+            { title: 'TypeScript', icon: <SiTypescript /> },
+            { title: 'JavaScript', icon: <SiJavascript /> },
+            { title: 'npm', icon: <SiNpm /> },
+            { title: 'yarn', icon: <SiYarn /> },
+            { title: 'Webpack', icon: <SiWebpack /> },
+            { title: 'HTML', icon: <SiHtml5 /> },
+            { title: 'CSS/SCSS', icon: <SiCss3 /> }
+        ]
+    },
+    backend: {
+        title: 'backend',
+        skills: [
+            { title: 'Java', icon: <SiJava /> },
+            { title: 'Spring Boot 2', icon: <SiSpring /> },
+            { title: 'PostgreSQL', icon: <SiPostgresql /> },
+            { title: 'Python', icon: <SiPython /> },
+            { title: 'Node.js', icon: <SiNodeDotJs /> }
+        ]
+    },
+    devops: {
+        title: 'devops',
+        skills: [
+            { title: 'Git', icon: <SiGit /> },
+            { title: 'Docker', icon: <SiDocker /> },
+            { title: 'Maven', icon: <SiApachemaven /> },
+            { title: 'Gitlab CI/CD', icon: <SiGitlab /> },
+            { title: 'Github Actions', icon: <SiGithub /> },
+            { title: 'SonarQube', icon: <SiSonarqube /> }
+        ]
+    }
 };
 
 const Skills = () => {
     return (
-        <Container>
+        <Container id={'skills'}>
             <Heading>Skills</Heading>
-            <ul>
-                {SKILLS.frontend.map((skill) => (
-                    <li key={skill.title}>{skill.title}</li>
-                ))}
-            </ul>
-            <ul>
-                {SKILLS.backend.map((skill) => (
-                    <li key={skill.title}>{skill.title}</li>
-                ))}
-            </ul>
-            <ul>
-                {SKILLS.devops.map((skill) => (
-                    <li key={skill.title}>{skill.title}</li>
-                ))}
-            </ul>
-            <GoTo></GoTo>
+            <Content>
+                <SkillList skill={SKILLS.frontend} />
+                <SkillList skill={SKILLS.backend} rtl={true} />
+                <SkillList skill={SKILLS.devops} />
+            </Content>
+            <Footer>
+                <GoTo section={'#about'} />
+            </Footer>
         </Container>
     );
 };
