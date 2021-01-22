@@ -7,6 +7,7 @@ const List = styled.ul`
     color: ${(props) => props.theme.global.primary};
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     justify-content: ${(props) => (props.rtl ? 'flex-end' : 'start')};

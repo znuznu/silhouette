@@ -4,11 +4,13 @@ import { IconContext } from '@react-icons/all-files';
 import { SiItchDotIo } from '@react-icons/all-files/si/SiItchDotIo';
 import { SiGithub } from '@react-icons/all-files/si/SiGithub';
 
+import Header from 'src/components/Header/Header';
 import ThemeContext from 'src/context/ThemeContext';
 
 const Container = styled.div`
-    height: calc(100vh - 50px);
+    height: 100vh;
     display: flex;
+    flex-direction: column;
 `;
 
 const Content = styled.div`
@@ -53,6 +55,7 @@ const About = () => {
 
     return (
         <Container id={'about'}>
+            <Header />
             <Content>
                 <Heading>Arthur, {<br />} full stack developer.</Heading>
                 <IconContext.Provider

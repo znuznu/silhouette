@@ -92,7 +92,7 @@ const SKILLS = {
 const Skills = () => {
     return (
         <Container id={'skills'}>
-            {/* <Heading>Skills</Heading> */}
+            {/* <Heading>SKILLS</Heading> */}
             <Content>
                 <SkillList skill={SKILLS.frontend} />
                 <SkillList skill={SKILLS.backend} rtl={true} />

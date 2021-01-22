@@ -9,11 +9,21 @@ import MaduraiRegular2 from 'src/fonts/hind-madurai-v6-latin-regular.woff2';
 import MaduraiBold from 'src/fonts/hind-madurai-v6-latin-500.woff';
 import MaduraiBold2 from 'src/fonts/hind-madurai-v6-latin-500.woff2';
 
+import CabinRegular from 'src/fonts/cabin-v17-latin-regular.woff';
+import CabinRegular2 from 'src/fonts/cabin-v17-latin-regular.woff2';
+
+import CabinBold from 'src/fonts/cabin-v17-latin-700.woff';
+import CabinBold2 from 'src/fonts/cabin-v17-latin-700.woff2';
+
 const GlobalStyle = createGlobalStyle`
   html, body {
     height: 100%;
     padding: 0;
     margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
@@ -46,6 +56,26 @@ const GlobalStyle = createGlobalStyle`
     src: local('Hind Madurai 500'),
     url(${MaduraiBold}) format('woff'),
     url(${MaduraiBold2}) format('woff2');
+  }
+
+  /* cabin-regular - latin */
+  @font-face {
+    font-family: 'Cabin';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Cabin Regular'),
+      url(${CabinRegular}) format('woff'),
+      url(${CabinRegular2}) format('woff2');
+  }
+
+  /* cabin-700 - latin */
+  @font-face {
+    font-family: 'Cabin';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Cabin 700'),
+    url(${CabinBold}) format('woff'),
+    url(${CabinBold2}) format('woff2');
   }
 `;
 

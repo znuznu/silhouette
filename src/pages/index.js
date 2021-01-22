@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Header from 'src/components/Header/Header';
 import About from 'src/components/About/About';
 import Skills from 'src/components/Skills/Skills';
+import Projects from 'src/components/Projects/Projects';
 
 import { ThemeProvider } from 'styled-components';
 
@@ -31,9 +32,9 @@ const IndexPage = () => {
                             value={{ selectedTheme, setSelectedTheme }}
                         >
                             <GlobalStyle />
-                            <Header />
                             <About />
                             <Skills />
+                            <Projects />
                             <GoTo section={'#about'} />
                         </ThemeContext.Provider>
                     </ThemeProvider>
