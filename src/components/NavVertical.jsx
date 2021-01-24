@@ -61,6 +61,7 @@ const NavVertical = () => {
 
     const themeContext = useContext(ThemeContext);
 
+    // meh.
     const [sections, setSections] = useState([
         {
             anchor: '#home',
