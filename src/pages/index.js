@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import Home from 'src/components/Home/Home';
-import About from 'src/components/About/About';
+import Home from 'src/components/Home';
+import About from 'src/components/About';
 import Skills from 'src/components/Skills/Skills';
 import Projects from 'src/components/Projects/Projects';
-import NavVertical from 'src/components/NavVertical/NavVertical';
+import NavVertical from 'src/components/NavVertical';
 
 import { ThemeProvider } from 'styled-components';
 

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { IconContext } from '@react-icons/all-files';
 import { CgCodeSlash } from '@react-icons/all-files/cg/CgCodeSlash';
@@ -10,7 +10,7 @@ import { CgWebsite } from '@react-icons/all-files/cg/CgWebsite';
 
 import useWindowSize from 'src/hooks/useWindowSize';
 import useScrollPosition from 'src/hooks/useScrollPosition';
-import ThemeSwitcher from '../common/ThemeSwitcher/ThemeSwitcher';
+import ThemeSwitcher from './common/ThemeSwitcher';
 
 const Container = styled.div`
     z-index: 100;
@@ -42,6 +42,10 @@ const Link = styled.a`
 const Icon = styled.div`
     display: flex;
     justify-content: center;
+
+    &:hover {
+        color: ${(props) => props.hoverColor};
+    }
 `;
 
 const Line = styled.hr`
@@ -51,16 +55,38 @@ const Line = styled.hr`
     height: 1px;
 `;
 
-const SECTIONS = [
-    { anchor: '#home', text: 'HOME', icon: <CgHome /> },
-    { anchor: '#about', text: 'ABOUT', icon: <CgProfile /> },
-    { anchor: '#skills', text: 'SKILLS', icon: <CgWebsite /> },
-    { anchor: '#projects', text: 'PROJECTS', icon: <CgCodeSlash /> }
-];
-
 const NavVertical = () => {
     const { size } = useWindowSize();
     const { position } = useScrollPosition();
+
+    const themeContext = useContext(ThemeContext);
+
+    const [sections, setSections] = useState([
+        {
+            anchor: '#home',
+            text: 'home',
+            icon: <CgHome />,
+            hoverColor: themeContext.section.colors.home
+        },
+        {
+            anchor: '#about',
+            text: 'about',
+            icon: <CgProfile />,
+            hoverColor: themeContext.section.colors.about
+        },
+        {
+            anchor: '#skills',
+            text: 'skills',
+            icon: <CgWebsite />,
+            hoverColor: themeContext.section.colors.skills
+        },
+        {
+            anchor: '#projects',
+            text: 'projects',
+            icon: <CgCodeSlash />,
+            hoverColor: themeContext.section.colors.projects
+        }
+    ]);
 
     if (position.y < size.height) return null;
 
@@ -72,10 +98,12 @@ const NavVertical = () => {
                         size: '2rem'
                     }}
                 >
-                    {SECTIONS.map((section) => (
+                    {sections.map((section) => (
                         <Element key={section.text}>
                             <Link href={section.anchor}>
-                                <Icon>{section.icon}</Icon>
+                                <Icon hoverColor={section.hoverColor}>
+                                    {section.icon}
+                                </Icon>
                             </Link>
                         </Element>
                     ))}

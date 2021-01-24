@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { SiAngular } from '@react-icons/all-files/si/SiAngular';
 import { SiReact } from '@react-icons/all-files/si/SiReact';
@@ -25,6 +25,7 @@ import { SiSonarqube } from '@react-icons/all-files/si/SiSonarqube';
 import { SiGithub } from '@react-icons/all-files/si/SiGithub';
 import { SiGitlab } from '@react-icons/all-files/si/SiGitlab';
 
+import Underline from 'src/components/common/Underline';
 import SkillList from 'src/components/Skills/SkillList/SkillList';
 
 const Container = styled.div`
@@ -47,6 +48,7 @@ const Heading = styled.h1`
     font-family: 'Kanit';
     font-size: 3rem;
     color: ${(props) => props.theme.global.primary};
+    text-transform: capitalize;
 `;
 
 const SKILLS = {
@@ -88,9 +90,16 @@ const SKILLS = {
 };
 
 const Skills = () => {
+    const themeContext = useContext(ThemeContext);
+
     return (
         <Container id={'skills'}>
-            <Heading>SKILLS</Heading>
+            <Heading>
+                <Underline
+                    text={'skills'}
+                    colors={[themeContext.section.colors.skills]}
+                />
+            </Heading>
             <Content>
                 <SkillList skill={SKILLS.frontend} />
                 <SkillList skill={SKILLS.backend} />

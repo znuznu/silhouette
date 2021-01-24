@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { SiAngular } from '@react-icons/all-files/si/SiAngular';
+import { SiReact } from '@react-icons/all-files/si/SiReact';
+import { SiGatsby } from '@react-icons/all-files/si/SiGatsby';
 import { SiNpm } from '@react-icons/all-files/si/SiNpm';
 import { SiWebpack } from '@react-icons/all-files/si/SiWebpack';
 import { SiJavascript } from '@react-icons/all-files/si/SiJavascript';
@@ -14,6 +16,7 @@ import { SiJava } from '@react-icons/all-files/si/SiJava';
 import { SiSpring } from '@react-icons/all-files/si/SiSpring';
 
 import ProjectCard from 'src/components/Projects/ProjectCard/ProjectCard';
+import Underline from 'src/components/common/Underline';
 
 const Container = styled.div`
     height: 100vh;
@@ -33,6 +36,7 @@ const Heading = styled.h1`
     font-family: 'Kanit';
     color: ${(props) => props.theme.global.primary};
     font-size: 3rem;
+    text-transform: capitalize;
 `;
 
 const PROJECTS = [
@@ -83,13 +87,33 @@ const PROJECTS = [
         source: 'https://github.com/znuznu/daedal',
         link: 'https://znuznu.github.io/daedal/',
         description: 'Maze generation algorithms written in JavaScript.'
+    },
+    {
+        title: 'Silhouette',
+        skills: [
+            { title: 'React', icon: <SiReact /> },
+            { title: 'JavaScript', icon: <SiJavascript /> },
+            { title: 'npm', icon: <SiNpm /> },
+            { title: 'Gatsby', icon: <SiGatsby /> },
+            { title: 'HTML5', icon: <SiHtml5 /> },
+            { title: 'CSS3', icon: <SiCss3 /> }
+        ],
+        source: 'https://github.com/znuznu/silhouette',
+        description: "Portfolio, you're on it."
     }
 ];
 
 const Projects = () => {
+    const themeContext = useContext(ThemeContext);
+
     return (
         <Container id={'projects'}>
-            <Heading>PROJECTS</Heading>
+            <Heading>
+                <Underline
+                    text={'projects'}
+                    colors={[themeContext.section.colors.projects]}
+                />
+            </Heading>
             <Wrapper>
                 {PROJECTS.map((project) => (
                     <ProjectCard project={project} key={`${project.title}`} />

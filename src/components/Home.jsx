@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { IconContext } from '@react-icons/all-files';
 import { SiItchDotIo } from '@react-icons/all-files/si/SiItchDotIo';
 import { SiGithub } from '@react-icons/all-files/si/SiGithub';
 
-import Header from 'src/components/Header/Header';
-import ThemeContext from 'src/context/ThemeContext';
+import Header from 'src/components/Header';
+import Underline from 'src/components/common/Underline';
 
 const Container = styled.div`
     height: 100vh;
@@ -51,18 +51,24 @@ const EXTERNALS = [
 const Home = () => {
     const themeContext = useContext(ThemeContext);
 
-    /* TODO: maybe change the id of the container here */
-
     return (
         <Container id={'home'}>
             <Header />
             <Content>
-                <Heading>Arthur, {<br />} full stack developer.</Heading>
+                <Heading>
+                    Arthur, {<br />} full stack{' '}
+                    <Underline
+                        text={'developer'}
+                        animate
+                        colors={themeContext.global.developer}
+                    />
+                    .
+                </Heading>
                 <IconContext.Provider
                     value={{
                         size: '4.5rem',
                         margin: 'auto 0 auto 0',
-                        color: themeContext.selectedTheme.global.primary
+                        color: themeContext.global.primary
                     }}
                 >
                     <Icons>

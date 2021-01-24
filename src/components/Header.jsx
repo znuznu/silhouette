@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 
 import styled from 'styled-components';
 
-import ThemeSwitcher from 'src/components/common/ThemeSwitcher/ThemeSwitcher';
-import NavHorizontal from 'src/components/NavHorizontal/NavHorizontal';
+import ThemeSwitcher from 'src/components/common/ThemeSwitcher';
+import NavHorizontal from 'src/components/NavHorizontal';
 
 const Container = styled.div`
     display: flex;

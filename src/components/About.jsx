@@ -1,11 +1,7 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
-import { IconContext } from '@react-icons/all-files';
-import { SiItchDotIo } from '@react-icons/all-files/si/SiItchDotIo';
-import { SiGithub } from '@react-icons/all-files/si/SiGithub';
+import styled, { ThemeContext } from 'styled-components';
 
-import Header from 'src/components/Header/Header';
-import ThemeContext from 'src/context/ThemeContext';
+import Underline from '/src/components/common/Underline';
 
 const Container = styled.div`
     height: 100vh;
@@ -27,6 +23,7 @@ const Heading = styled.h1`
     font-family: 'Kanit';
     font-size: 3rem;
     color: ${(props) => props.theme.global.primary};
+    text-transform: capitalize;
 `;
 
 const Text = styled.p`
@@ -36,17 +33,16 @@ const Text = styled.p`
     text-align: justify;
     text-justify: auto;
     max-width: 50rem;
-    background-color: yellow;
 `;
 
 const About = () => {
     const themeContext = useContext(ThemeContext);
 
-    /* TODO: maybe change the id of the container here */
-
     return (
         <Container id={'about'}>
-            <Heading>ABOUT</Heading>
+            <Heading>
+                <Underline text={'about'} colors={[themeContext.section.colors.about]} />
+            </Heading>
             <Content>
                 <Text>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
