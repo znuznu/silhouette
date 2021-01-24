@@ -29,9 +29,9 @@ import SkillList from 'src/components/Skills/SkillList/SkillList';
 
 const Container = styled.div`
     height: 100vh;
+    margin: 0 7rem 0 7rem;
     display: flex;
     flex-direction: column;
-    margin: 0 7rem 0 7rem;
 `;
 
 const Content = styled.div`
@@ -40,14 +40,12 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: space-between;
     margin-bottom: 1.5rem;
 `;
 
 const Heading = styled.h1`
-    font-family: 'Hind Madurai 500';
-    font-size: 6rem;
-    margin: 0;
+    font-family: 'Kanit';
+    font-size: 3rem;
     color: ${(props) => props.theme.global.primary};
 `;
 
@@ -92,10 +90,10 @@ const SKILLS = {
 const Skills = () => {
     return (
         <Container id={'skills'}>
-            {/* <Heading>SKILLS</Heading> */}
+            <Heading>SKILLS</Heading>
             <Content>
                 <SkillList skill={SKILLS.frontend} />
-                <SkillList skill={SKILLS.backend} rtl={true} />
+                <SkillList skill={SKILLS.backend} />
                 <SkillList skill={SKILLS.devops} />
             </Content>
         </Container>

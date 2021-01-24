@@ -17,11 +17,22 @@ import ProjectCard from 'src/components/Projects/ProjectCard/ProjectCard';
 
 const Container = styled.div`
     height: 100vh;
+    margin: 0 7rem 0 7rem;
+    display: flex;
+    flex-direction: column;
 `;
 
-const Content = styled.div`
+const Wrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
+    margin: -2rem 0 0 -2rem;
+    width: calc(100% + 2rem);
+`;
+
+const Heading = styled.h1`
+    font-family: 'Kanit';
+    color: ${(props) => props.theme.global.primary};
+    font-size: 3rem;
 `;
 
 const PROJECTS = [
@@ -78,12 +89,12 @@ const PROJECTS = [
 const Projects = () => {
     return (
         <Container id={'projects'}>
-            {/* <Heading>PROJECTS</Heading> */}
-            <Content>
+            <Heading>PROJECTS</Heading>
+            <Wrapper>
                 {PROJECTS.map((project) => (
-                    <ProjectCard project={project} />
+                    <ProjectCard project={project} key={`${project.title}`} />
                 ))}
-            </Content>
+            </Wrapper>
         </Container>
     );
 };

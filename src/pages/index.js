@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 
-import Header from 'src/components/Header/Header';
+import Home from 'src/components/Home/Home';
 import About from 'src/components/About/About';
 import Skills from 'src/components/Skills/Skills';
 import Projects from 'src/components/Projects/Projects';
+import NavVertical from 'src/components/NavVertical/NavVertical';
 
 import { ThemeProvider } from 'styled-components';
 
@@ -12,7 +12,6 @@ import ThemeContext from 'src/context/ThemeContext';
 import useTheme from 'src/hooks/useTheme';
 
 import GlobalStyle from 'src/theme/GlobalStyle';
-import GoTo from 'src/components/common/GoTo/GoTo';
 
 const IndexPage = () => {
     const { theme, isLoaded } = useTheme();
@@ -32,10 +31,11 @@ const IndexPage = () => {
                             value={{ selectedTheme, setSelectedTheme }}
                         >
                             <GlobalStyle />
+                            <Home />
                             <About />
                             <Skills />
                             <Projects />
-                            <GoTo section={'#about'} />
+                            <NavVertical />
                         </ThemeContext.Provider>
                     </ThemeProvider>
                 </main>

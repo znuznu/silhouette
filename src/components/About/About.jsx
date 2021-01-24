@@ -9,44 +9,35 @@ import ThemeContext from 'src/context/ThemeContext';
 
 const Container = styled.div`
     height: 100vh;
+    margin: 0 7rem 0 7rem;
     display: flex;
     flex-direction: column;
 `;
 
 const Content = styled.div`
-    margin: auto 0 auto 3rem;
-    height: 25rem;
+    padding: 0 2rem 0 2rem;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    height: 100%;
+    margin-bottom: 1.5rem;
 `;
 
 const Heading = styled.h1`
     font-family: 'Kanit';
-    font-size: 7rem;
-    line-height: 6rem;
+    font-size: 3rem;
     color: ${(props) => props.theme.global.primary};
-    margin: 0;
 `;
 
-const Icons = styled.div`
-    width: 10rem;
-    display: flex;
-    justify-content: space-between;
+const Text = styled.p`
+    font-family: 'Cabin';
+    color: ${(props) => props.theme.global.primary};
+    font-size: 1.5rem;
+    text-align: justify;
+    text-justify: auto;
+    max-width: 50rem;
+    background-color: yellow;
 `;
-
-const EXTERNALS = [
-    {
-        link: 'https://github.com/znuznu',
-        icon: <SiGithub />,
-        title: 'Link to Github profile'
-    },
-    {
-        link: 'https://znu.itch.io/',
-        icon: <SiItchDotIo />,
-        title: 'Link to itch.io profile'
-    }
-];
 
 const About = () => {
     const themeContext = useContext(ThemeContext);
@@ -55,30 +46,17 @@ const About = () => {
 
     return (
         <Container id={'about'}>
-            <Header />
+            <Heading>ABOUT</Heading>
             <Content>
-                <Heading>Arthur, {<br />} full stack developer.</Heading>
-                <IconContext.Provider
-                    value={{
-                        size: '4.5rem',
-                        margin: 'auto 0 auto 0',
-                        color: themeContext.selectedTheme.global.primary
-                    }}
-                >
-                    <Icons>
-                        {EXTERNALS.map((external) => (
-                            <a
-                                href={external.link}
-                                target="_blank"
-                                title={external.title}
-                                rel="noopener noreferrer"
-                                key={external.link}
-                            >
-                                {external.icon}
-                            </a>
-                        ))}
-                    </Icons>
-                </IconContext.Provider>
+                <Text>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum."
+                </Text>
             </Content>
         </Container>
     );

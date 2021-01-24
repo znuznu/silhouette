@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import { IconContext } from '@react-icons/all-files';
-import { IoSunny } from '@react-icons/all-files/io5/IoSunny';
-import { IoMoon } from '@react-icons/all-files/io5/IoMoon';
+import { CgSun } from '@react-icons/all-files/cg/CgSun';
+import { CgMoon } from '@react-icons/all-files/cg/CgMoon';
 
 import ThemeContext from 'src/context/ThemeContext';
 import useTheme from 'src/hooks/useTheme';
@@ -32,9 +32,9 @@ const ThemeSwitcher = () => {
         <IconContext.Provider value={{ size: '1.5rem', margin: 'auto 0 auto 0' }}>
             <Button>
                 {theme && theme.type === 'dark' ? (
-                    <IoSunny onClick={handleClick} />
+                    <CgSun onClick={handleClick} />
                 ) : (
-                    <IoMoon onClick={handleClick} />
+                    <CgMoon onClick={handleClick} />
                 )}
             </Button>
         </IconContext.Provider>

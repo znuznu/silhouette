@@ -20,14 +20,16 @@ const IconsColor = {
     CSS3: '#1A82BB'
 };
 
-const Container = styled.div`
+const Card = styled.div`
     padding: 1rem;
     box-shadow: 4px 4px 0px 4px ${(props) => props.theme.global.primary};
     border-radius: 2px;
     color: ${(props) => props.theme.global.primary};
     max-width: 20rem;
+    min-width: 20rem;
     display: flex;
     flex-direction: column;
+    margin: 2rem 0 0 2rem;
 `;
 
 const Title = styled.div`
@@ -46,11 +48,11 @@ const Links = styled.div`
     display: flex;
 `;
 
-const Description = styled.div`
+const Description = styled.p`
     padding-right: 1rem;
     font-family: 'Cabin';
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 0;
     flex-grow: 1;
 `;
 
@@ -71,7 +73,7 @@ const ProjectCard = (props) => {
     const { project } = props;
 
     return (
-        <Container>
+        <Card>
             <Header>
                 <Title>{project.title}</Title>
                 <Links>
@@ -108,17 +110,17 @@ const ProjectCard = (props) => {
             <Description>{project.description}</Description>
 
             <Skills>
-                {project.skills.map((skill) => (
-                    <IconContext.Provider
-                        value={{
-                            size: '2rem'
-                        }}
-                    >
-                        <SkillIcon> {skill.icon}</SkillIcon>
-                    </IconContext.Provider>
-                ))}
+                <IconContext.Provider
+                    value={{
+                        size: '2rem'
+                    }}
+                >
+                    {project.skills.map((skill) => (
+                        <SkillIcon key={skill.title}> {skill.icon}</SkillIcon>
+                    ))}
+                </IconContext.Provider>
             </Skills>
-        </Container>
+        </Card>
     );
 };
 

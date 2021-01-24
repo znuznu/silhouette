@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import ThemeSwitcher from 'src/components/common/ThemeSwitcher/ThemeSwitcher';
-import Nav from 'src/components/Nav/Nav';
+import NavHorizontal from 'src/components/NavHorizontal/NavHorizontal';
 
 const Container = styled.div`
     display: flex;
@@ -23,7 +23,7 @@ const Header = () => {
                 {/* TODO: replace this one with i18n */}
                 <ThemeSwitcher />
             </ContainerButtons>
-            <Nav />
+            <NavHorizontal />
         </Container>
     );
 };
