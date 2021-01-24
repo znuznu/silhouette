@@ -8,7 +8,7 @@ import NavHorizontal from 'src/components/NavHorizontal/NavHorizontal';
 const Container = styled.div`
     display: flex;
     justify-content: space-between;
-    padding-right: 1rem;
+    padding: 0 1rem 0 0.5rem;
 `;
 
 const ContainerButtons = styled.div`
@@ -19,8 +19,6 @@ const Header = () => {
     return (
         <Container>
             <ContainerButtons>
-                <ThemeSwitcher />
-                {/* TODO: replace this one with i18n */}
                 <ThemeSwitcher />
             </ContainerButtons>
             <NavHorizontal />

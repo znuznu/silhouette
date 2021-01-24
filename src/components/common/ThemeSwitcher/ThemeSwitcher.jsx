@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
 
 import { IconContext } from '@react-icons/all-files';
@@ -19,7 +21,9 @@ const Button = styled.button`
     vertical-align: middle;
 `;
 
-const ThemeSwitcher = () => {
+const ThemeSwitcher = (props) => {
+    const { size } = props;
+
     const themeContext = useContext(ThemeContext);
     const { theme, toggleTheme } = useTheme();
 
@@ -29,16 +33,20 @@ const ThemeSwitcher = () => {
     };
 
     return (
-        <IconContext.Provider value={{ size: '1.5rem', margin: 'auto 0 auto 0' }}>
-            <Button>
-                {theme && theme.type === 'dark' ? (
-                    <CgSun onClick={handleClick} />
-                ) : (
-                    <CgMoon onClick={handleClick} />
-                )}
+        <IconContext.Provider value={{ size, margin: 'auto 0 auto 0' }}>
+            <Button onClick={handleClick}>
+                {theme && theme.type === 'dark' ? <CgSun /> : <CgMoon />}
             </Button>
         </IconContext.Provider>
     );
+};
+
+ThemeSwitcher.propTypes = {
+    size: PropTypes.string
+};
+
+ThemeSwitcher.defaultProps = {
+    size: '1.5rem'
 };
 
 export default ThemeSwitcher;

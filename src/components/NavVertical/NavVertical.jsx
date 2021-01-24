@@ -10,6 +10,7 @@ import { CgWebsite } from '@react-icons/all-files/cg/CgWebsite';
 
 import useWindowSize from 'src/hooks/useWindowSize';
 import useScrollPosition from 'src/hooks/useScrollPosition';
+import ThemeSwitcher from '../common/ThemeSwitcher/ThemeSwitcher';
 
 const Container = styled.div`
     z-index: 100;
@@ -25,8 +26,8 @@ const Links = styled.ul`
 `;
 
 const Element = styled.li`
-    margin: 0;
     padding: 0;
+    margin: 0 auto 1rem auto;
 `;
 
 const Link = styled.a`
@@ -35,6 +36,19 @@ const Link = styled.a`
     font-family: 'Hind Madurai 500';
     vertical-align: middle;
     padding: 0;
+    margin: 0 auto 0 auto;
+`;
+
+const Icon = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
+const Line = styled.hr`
+    color: ${(props) => props.theme.global.primary};
+    background-color: ${(props) => props.theme.global.primary};
+    border: 1px solid ${(props) => props.theme.global.primary};
+    height: 1px;
 `;
 
 const SECTIONS = [
@@ -60,11 +74,15 @@ const NavVertical = () => {
                 >
                     {SECTIONS.map((section) => (
                         <Element key={section.text}>
-                            <Link href={section.anchor}>{section.icon}</Link>
+                            <Link href={section.anchor}>
+                                <Icon>{section.icon}</Icon>
+                            </Link>
                         </Element>
                     ))}
                 </IconContext.Provider>
+                <Line />
             </Links>
+            <ThemeSwitcher size={'2rem'} />
         </Container>
     );
 };
