@@ -22,7 +22,7 @@ const Element = styled.li`
     ${(props) => (props.rtl ? 'margin-left: 1.5rem;' : 'margin-right: 1.5rem;')};
 `;
 
-const SkillType = styled.h4`
+const Type = styled.h4`
     margin: 0.5rem auto 0 auto;
     font-family: 'Hind Madurai 500';
     font-size: 4rem;
@@ -40,7 +40,7 @@ const SkillList = (props) => {
 
     return (
         <div>
-            <SkillType rtl={rtl}>{skill.title}</SkillType>
+            <Type rtl={rtl}>{skill.title}</Type>
             <List rtl={rtl}>
                 {skill.skills.map((skill) => (
                     <Element key={skill.title} rtl={rtl}>

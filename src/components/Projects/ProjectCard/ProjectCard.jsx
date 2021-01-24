@@ -26,21 +26,14 @@ const Container = styled.div`
     border-radius: 2px;
     color: ${(props) => props.theme.global.primary};
     max-width: 20rem;
+    display: flex;
+    flex-direction: column;
 `;
 
 const Title = styled.div`
     font-family: 'Kanit';
     font-size: 2.5rem;
     font-weight: 800;
-`;
-
-const Description = styled.div`
-    display: flex;
-    justify-content: space-between;
-    padding-right: 1rem;
-    font-family: 'Cabin';
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
 `;
 
 const Link = styled.a`
@@ -51,6 +44,14 @@ const Link = styled.a`
 const Links = styled.div`
     margin: auto 0 auto 0;
     display: flex;
+`;
+
+const Description = styled.div`
+    padding-right: 1rem;
+    font-family: 'Cabin';
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
 `;
 
 const Skills = styled.div`

@@ -55,8 +55,8 @@ const SKILLS = {
     frontend: {
         title: 'frontend',
         skills: [
-            { title: 'Angular', icon: <SiAngular /> },
             { title: 'React', icon: <SiReact /> },
+            { title: 'Angular', icon: <SiAngular /> },
             { title: 'TypeScript', icon: <SiTypescript /> },
             { title: 'JavaScript', icon: <SiJavascript /> },
             { title: 'npm', icon: <SiNpm /> },
