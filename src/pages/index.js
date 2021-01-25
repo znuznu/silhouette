@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from 'react';
 
+import styled from 'styled-components';
+
 import Home from 'src/components/Home';
 import About from 'src/components/About';
 import Skills from 'src/components/Skills/Skills';
 import Projects from 'src/components/Projects/Projects';
 import NavVertical from 'src/components/NavVertical';
+import NavSmall from 'src/components/NavSmall';
 
 import { ThemeProvider } from 'styled-components';
 
 import ThemeContext from 'src/context/ThemeContext';
 import useTheme from 'src/hooks/useTheme';
+import useMediaQuery from 'src/hooks/useMediaQuery';
 
 import GlobalStyle from 'src/theme/GlobalStyle';
 
 const IndexPage = () => {
     const { theme, isLoaded } = useTheme();
     const [selectedTheme, setSelectedTheme] = useState(theme);
+    const [isLarge] = useMediaQuery('(min-width: 990px)');
 
     useEffect(() => {
         setSelectedTheme(theme);
@@ -35,7 +40,7 @@ const IndexPage = () => {
                             <About />
                             <Skills />
                             <Projects />
-                            <NavVertical />
+                            {isLarge ? <NavVertical /> : <NavSmall />}
                         </ThemeContext.Provider>
                     </ThemeProvider>
                 </main>

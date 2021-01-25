@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { IconContext } from '@react-icons/all-files';
 
+import useMediaQuery from 'src/hooks/useMediaQuery';
+
 const List = styled.ul`
     color: ${(props) => props.theme.global.primary};
     list-style: none;
@@ -10,9 +12,13 @@ const List = styled.ul`
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
-    justify-content: ${(props) => (props.rtl ? 'flex-end' : 'start')};
-    margin: -1rem 0 0 -1rem;
-    width: calc(100% + 1rem);
+    justify-content: center;
+
+    @media screen and (min-width: 990px) {
+        margin: -1rem 0 0 -1rem;
+        width: calc(100% + 1rem);
+        justify-content: ${(props) => (props.rtl ? 'flex-end' : 'start')};
+    }
 `;
 
 const Element = styled.li`
@@ -28,7 +34,7 @@ const Element = styled.li`
 const Type = styled.h4`
     margin: 0;
     font-family: 'Kanit';
-    font-size: 3rem;
+    font-size: 1.8rem;
     text-transform: capitalize;
     color: ${(props) => props.theme.global.primary};
     ${(props) =>
@@ -36,6 +42,10 @@ const Type = styled.h4`
             ? `display: flex;
     justify-content: flex-end;`
             : 'auto'}
+
+    @media screen and (min-width: 990px) {
+        font-size: 3rem;
+    }
 `;
 
 const Content = styled.div`
@@ -45,13 +55,17 @@ const Content = styled.div`
 const SkillList = (props) => {
     const { skill, rtl } = props;
 
+    const [isLarge] = useMediaQuery('(min-width: 990px)');
+
     return (
         <Content>
             <Type rtl={rtl}>{skill.title}</Type>
             <List rtl={rtl}>
                 {skill.skills.map((skill) => (
                     <Element key={skill.title} rtl={rtl}>
-                        <IconContext.Provider value={{ size: '3.5rem', margin: 0 }}>
+                        <IconContext.Provider
+                            value={{ size: isLarge ? '3.5rem' : '2.5rem', margin: 0 }}
+                        >
                             {skill.icon}
                         </IconContext.Provider>
                         {/* <SkillName>{skill.title}</SkillName> */}

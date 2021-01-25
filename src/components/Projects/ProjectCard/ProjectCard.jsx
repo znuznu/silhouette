@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import PropTypes from 'prop-types';
 
 import { IconContext } from '@react-icons/all-files';
-import { SiGithub } from '@react-icons/all-files/si/SiGithub';
+import { GrTools } from '@react-icons/all-files/gr/GrTools';
 import { IoOpenOutline } from '@react-icons/all-files/io5/IoOpenOutline';
 
+import useMediaQuery from 'src/hooks/useMediaQuery';
+
+// I don't like using only one color
 const IconsColor = {
     TypeScript: '#2F74C0',
     JavaScript: '#EFD81D',
@@ -25,21 +28,29 @@ const Card = styled.div`
     box-shadow: 4px 4px 0px 4px ${(props) => props.theme.global.primary};
     border-radius: 2px;
     color: ${(props) => props.theme.global.primary};
-    max-width: 20rem;
-    min-width: 20rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 2rem 0 0 2rem;
+    margin: 0.5rem 0 1rem 0;
+
+    @media screen and (min-width: 990px) {
+        margin: 2rem 0 0 2rem;
+        max-width: 20rem;
+        min-width: 20rem;
+    }
 `;
 
 const Title = styled.div`
     font-family: 'Kanit';
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 800;
+
+    @media screen and (min-width: 990px) {
+        font-size: 2.5rem;
+    }
 `;
 
 const Link = styled.a`
-    color: ${(props) => props.theme.global.primary};
     margin-left: 0.5rem;
 `;
 
@@ -51,13 +62,18 @@ const Links = styled.div`
 const Description = styled.p`
     padding-right: 1rem;
     font-family: 'Cabin';
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: 0 0 1rem 0;
     flex-grow: 1;
+
+    @media screen and (min-width: 990px) {
+        font-size: 1.2rem;
+    }
 `;
 
 const Skills = styled.div`
     display: flex;
+    flex-wrap: wrap;
 `;
 
 const SkillIcon = styled.div`
@@ -72,6 +88,9 @@ const Header = styled.div`
 const ProjectCard = (props) => {
     const { project } = props;
 
+    const themeContext = useContext(ThemeContext);
+    const [isLarge] = useMediaQuery('(min-width: 990px)');
+
     return (
         <Card>
             <Header>
@@ -79,18 +98,21 @@ const ProjectCard = (props) => {
                 <Links>
                     <IconContext.Provider
                         value={{
-                            size: '1.8rem'
+                            size: isLarge ? '1.8rem' : '1.5rem',
+                            color: themeContext.global.primary
                         }}
                     >
-                        {project.source && (
+                        {project.source ? (
                             <Link
                                 href={project.source}
                                 target="_blank"
                                 title={'Link to the source code.'}
                                 rel="noopener noreferrer"
                             >
-                                <SiGithub />
+                                {project.sourceIcon}
                             </Link>
+                        ) : (
+                            <GrTools />
                         )}
 
                         {project.link && (
@@ -112,7 +134,7 @@ const ProjectCard = (props) => {
             <Skills>
                 <IconContext.Provider
                     value={{
-                        size: '2rem'
+                        size: isLarge ? '2rem' : '1.5rem'
                     }}
                 >
                     {project.skills.map((skill) => (
@@ -129,6 +151,7 @@ ProjectCard.propTypes = {
         title: PropTypes.string,
         skills: PropTypes.array,
         source: PropTypes.string,
+        sourceIcon: PropTypes.object,
         link: PropTypes.string,
         description: PropTypes.string
     }).isRequired
@@ -139,6 +162,7 @@ ProjectCard.defaultProps = {
         title: '',
         skills: [],
         source: 'No source yet.',
+        sourceIcon: '',
         link: 'No link yet.',
         description: ''
     }

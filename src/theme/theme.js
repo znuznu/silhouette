@@ -37,7 +37,7 @@ export const light = {
             home: '#81E6D9',
             about: '#FEB2B2',
             skills: '#D6BCFA',
-            projects: '#68D391'
+            projects: '#9AE6B4'
         }
     }
 };

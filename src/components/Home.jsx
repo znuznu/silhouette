@@ -7,6 +7,8 @@ import { SiGithub } from '@react-icons/all-files/si/SiGithub';
 import Header from 'src/components/Header';
 import Underline from 'src/components/common/Underline';
 
+import useMediaQuery from 'src/hooks/useMediaQuery';
+
 const Container = styled.div`
     height: 100vh;
     display: flex;
@@ -23,10 +25,15 @@ const Content = styled.div`
 
 const Heading = styled.h1`
     font-family: 'Kanit';
-    font-size: 7rem;
-    line-height: 6rem;
+    font-size: 3rem;
+    line-height: 3rem;
     color: ${(props) => props.theme.global.primary};
     margin: 0;
+
+    @media screen and (min-width: 990px) {
+        font-size: 7rem;
+        line-height: 6rem;
+    }
 `;
 
 const Icons = styled.div`
@@ -50,12 +57,13 @@ const EXTERNALS = [
 
 const Home = () => {
     const themeContext = useContext(ThemeContext);
+    const [isLarge] = useMediaQuery('(min-width: 990px)');
 
     return (
         <Container id={'home'}>
-            <Header />
+            {isLarge && <Header />}
             <Content>
-                <Heading>
+                <Heading isLarge={isLarge}>
                     Arthur, {<br />} full stack{' '}
                     <Underline
                         text={'developer'}
@@ -66,7 +74,7 @@ const Home = () => {
                 </Heading>
                 <IconContext.Provider
                     value={{
-                        size: '4.5rem',
+                        size: isLarge ? '4.5rem' : '3rem',
                         margin: 'auto 0 auto 0',
                         color: themeContext.global.primary
                     }}
