@@ -32,10 +32,12 @@ const Container = styled.div`
     margin: 0 1rem 0 1rem;
     display: flex;
     flex-direction: column;
+    padding-top: 64px;
 
     @media screen and (min-width: 990px) {
         height: 100vh;
         margin: 0 7rem 0 7rem;
+        padding-top: 0;
     }
 `;
 

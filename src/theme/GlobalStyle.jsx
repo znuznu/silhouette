@@ -30,6 +30,8 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.global.bgColor}; 
   }
 
+  
+
   @font-face {
     font-family: 'Kanit';
     src: local('Kanit'), local('Kanit'),

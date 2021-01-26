@@ -16,11 +16,16 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-    margin: auto 0 auto 3rem;
-    height: 25rem;
+    margin: auto 3rem auto 3rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
+    @media screen and (min-width: 990px) {
+        justify-content: space-center;
+        height: 25rem;
+    }
 `;
 
 const Heading = styled.h1`
@@ -37,9 +42,17 @@ const Heading = styled.h1`
 `;
 
 const Icons = styled.div`
-    width: 10rem;
+    width: 6rem;
     display: flex;
     justify-content: space-between;
+    margin-top: 2rem;
+
+    @media screen and (min-width: 990px) {
+        width: 10rem;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0;
+    }
 `;
 
 const EXTERNALS = [
@@ -63,7 +76,7 @@ const Home = () => {
         <Container id={'home'}>
             {isLarge && <Header />}
             <Content>
-                <Heading isLarge={isLarge}>
+                <Heading>
                     Arthur, {<br />} full stack{' '}
                     <Underline
                         text={'developer'}
@@ -74,7 +87,7 @@ const Home = () => {
                 </Heading>
                 <IconContext.Provider
                     value={{
-                        size: isLarge ? '4.5rem' : '3rem',
+                        size: isLarge ? '4.5rem' : '2.5rem',
                         margin: 'auto 0 auto 0',
                         color: themeContext.global.primary
                     }}
