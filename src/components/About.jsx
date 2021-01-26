@@ -11,7 +11,7 @@ const Container = styled.div`
     justify-content: center;
 
     @media screen and (min-width: 990px) {
-        margin: 0 7rem 0 7rem;
+        margin: 0 8.8rem 0 8.8rem;
     }
 `;
 

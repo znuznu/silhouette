@@ -28,7 +28,7 @@ const Container = styled.div`
 
     @media screen and (min-width: 990px) {
         height: 100vh;
-        margin: 0 7rem 0 7rem;
+        margin: 0 8.8rem 0 8.8rem;
         padding-top: 0;
     }
 `;

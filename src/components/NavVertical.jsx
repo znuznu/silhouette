@@ -23,25 +23,39 @@ const Container = styled.div`
 const Links = styled.ul`
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-bottom: 0;
 `;
 
 const Element = styled.li`
     padding: 0;
     margin: 0 auto 1rem auto;
+    width: 100%;
+    display: flex;
 `;
 
 const Link = styled.a`
     text-decoration: none;
     color: ${(props) => props.theme.global.primary};
-    font-family: 'Hind Madurai 500';
     vertical-align: middle;
-    padding: 0;
-    margin: 0 auto 0 auto;
+    padding: 0 0.3rem;
+    ${(props) => (props.hasOneLinkHovered ? 'margin-left: auto;' : 'margin: 0 auto;')}
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+`;
+
+const Text = styled.span`
+    font-family: 'Hind Madurai 500';
+    margin-left: 0.5rem;
 `;
 
 const Icon = styled.div`
     display: flex;
     justify-content: center;
+    margin: 0;
 
     &:hover {
         color: ${(props) => props.hoverColor};
@@ -53,11 +67,18 @@ const Line = styled.hr`
     background-color: ${(props) => props.theme.global.primary};
     border: 1px solid ${(props) => props.theme.global.primary};
     height: 1px;
+    margin-top: 0;
+`;
+
+const Outside = styled.div`
+    display: inline-block;
+    float: right;
 `;
 
 const NavVertical = () => {
     const { size } = useWindowSize();
     const { position } = useScrollPosition();
+    const [hoveredIndex, setHoveredIndex] = useState(-1);
 
     const themeContext = useContext(ThemeContext);
 
@@ -91,6 +112,14 @@ const NavVertical = () => {
 
     if (position.y < size.height) return null;
 
+    const updateIndex = (index) => {
+        setHoveredIndex(index);
+    };
+
+    const resetIndex = () => {
+        setHoveredIndex(-1);
+    };
+
     return (
         <Container>
             <Links>
@@ -99,19 +128,25 @@ const NavVertical = () => {
                         size: '2rem'
                     }}
                 >
-                    {sections.map((section) => (
+                    {sections.map((section, index) => (
                         <Element key={section.text}>
-                            <Link href={section.anchor}>
-                                <Icon hoverColor={section.hoverColor}>
-                                    {section.icon}
-                                </Icon>
+                            <Link
+                                href={section.anchor}
+                                onMouseEnter={() => updateIndex(index)}
+                                onMouseLeave={() => resetIndex()}
+                                hasOneLinkHovered={hoveredIndex !== -1}
+                            >
+                                <Icon>{section.icon}</Icon>
+                                {index === hoveredIndex && <Text>{section.text}</Text>}
                             </Link>
                         </Element>
                     ))}
                 </IconContext.Provider>
-                <Line />
             </Links>
-            <ThemeSwitcher size={'2rem'} />
+            <Outside>
+                <Line />
+                <ThemeSwitcher size={'2rem'} />
+            </Outside>
         </Container>
     );
 };
