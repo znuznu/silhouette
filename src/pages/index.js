@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import styled from 'styled-components';
-
 import Home from 'src/components/Home';
 import About from 'src/components/About';
 import Skills from 'src/components/Skills/Skills';

@@ -18,6 +18,7 @@ const Container = styled.div`
     top: 50%;
     right: 1rem;
     transform: translate(0%, -50%);
+    width: 7.5rem;
 `;
 
 const Links = styled.ul`
@@ -30,8 +31,6 @@ const Links = styled.ul`
 `;
 
 const Element = styled.li`
-    padding: 0;
-    margin: 0 auto 1rem auto;
     width: 100%;
     display: flex;
 `;
@@ -40,11 +39,17 @@ const Link = styled.a`
     text-decoration: none;
     color: ${(props) => props.theme.global.primary};
     vertical-align: middle;
-    padding: 0 0.3rem;
-    ${(props) => (props.hasOneLinkHovered ? 'margin-left: auto;' : 'margin: 0 auto;')}
+    padding: 0 0.3rem 0.8rem;
+    margin-left: auto;
     text-transform: uppercase;
     align-items: center;
     display: flex;
+    transition: max-width 1s;
+    max-width: 3rem;
+
+    &:hover {
+        max-width: 10rem;
+    }
 `;
 
 const Text = styled.span`
@@ -55,11 +60,6 @@ const Text = styled.span`
 const Icon = styled.div`
     display: flex;
     justify-content: center;
-    margin: 0;
-
-    &:hover {
-        color: ${(props) => props.hoverColor};
-    }
 `;
 
 const Line = styled.hr`
@@ -138,6 +138,7 @@ const NavVertical = () => {
                             >
                                 <Icon>{section.icon}</Icon>
                                 {index === hoveredIndex && <Text>{section.text}</Text>}
+                                {/* <Text>{section.text}</Text> */}
                             </Link>
                         </Element>
                     ))}

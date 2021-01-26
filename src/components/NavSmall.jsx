@@ -51,13 +51,6 @@ const Icon = styled.div`
     }
 `;
 
-const Line = styled.hr`
-    color: ${(props) => props.theme.global.primary};
-    background-color: ${(props) => props.theme.global.primary};
-    border: 1px solid ${(props) => props.theme.global.primary};
-    height: 1px;
-`;
-
 const NavVertical = () => {
     const themeContext = useContext(ThemeContext);
 

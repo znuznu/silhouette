@@ -21,12 +21,26 @@ const Text = styled.p`
     }
 `;
 
+const TextIcon = styled(Text)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Icon = styled.span`
+    margin: 0 0.3rem;
+`;
+
 const Footer = () => {
     return (
         <Container>
-            <Text>
-                Made with <SiGatsby /> by me
-            </Text>
+            <TextIcon>
+                Made with
+                <Icon>
+                    <SiGatsby />
+                </Icon>
+                by me
+            </TextIcon>
             <Text>Copyright (c) - Arthur Fröhlich under MIT license</Text>
         </Container>
     );

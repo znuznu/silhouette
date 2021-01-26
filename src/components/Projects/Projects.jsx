@@ -11,6 +11,7 @@ import { SiJavascript } from '@react-icons/all-files/si/SiJavascript';
 import { SiTypescript } from '@react-icons/all-files/si/SiTypescript';
 import { SiCss3 } from '@react-icons/all-files/si/SiCss3';
 import { SiHtml5 } from '@react-icons/all-files/si/SiHtml5';
+import { SiItchDotIo } from '@react-icons/all-files/si/SiItchDotIo';
 
 import { SiJava } from '@react-icons/all-files/si/SiJava';
 import { SiSpring } from '@react-icons/all-files/si/SiSpring';
@@ -72,8 +73,8 @@ const PROJECTS = [
         title: 'Little Knight',
         skills: [
             { title: 'JavaScript', icon: <SiJavascript /> },
-            { title: 'npm', icon: <SiNpm /> },
-            { title: 'Webpack', icon: <SiWebpack /> }
+            { title: 'Webpack', icon: <SiWebpack /> },
+            { title: 'itch', icon: <SiItchDotIo /> }
         ],
         source: 'https://github.com/znuznu/little-knight',
         sourceIcon: <SiGithub />,
@@ -97,7 +98,6 @@ const PROJECTS = [
         title: 'Daedal',
         skills: [
             { title: 'JavaScript', icon: <SiJavascript /> },
-            { title: 'npm', icon: <SiNpm /> },
             { title: 'Webpack', icon: <SiWebpack /> },
             { title: 'HTML5', icon: <SiHtml5 /> },
             { title: 'CSS3', icon: <SiCss3 /> }
@@ -113,7 +113,6 @@ const PROJECTS = [
             { title: 'Gatsby', icon: <SiGatsby /> },
             { title: 'React', icon: <SiReact /> },
             { title: 'JavaScript', icon: <SiJavascript /> },
-            { title: 'npm', icon: <SiNpm /> },
             { title: 'HTML5', icon: <SiHtml5 /> },
             { title: 'CSS3', icon: <SiCss3 /> }
         ],

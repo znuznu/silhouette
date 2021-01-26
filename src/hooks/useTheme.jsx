@@ -9,7 +9,7 @@ const useTheme = () => {
 
     useEffect(() => {
         const currentTheme = localStorage.getItem(KEY_NAME);
-        currentTheme ? updateTheme(currentTheme) : updateTheme('dark');
+        currentTheme ? updateTheme(currentTheme) : updateTheme('light');
     }, []);
 
     const updateTheme = (theme) => {
