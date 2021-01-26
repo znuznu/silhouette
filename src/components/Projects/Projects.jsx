@@ -47,7 +47,6 @@ const Heading = styled.h1`
     color: ${(props) => props.theme.global.primary};
     font-size: 2rem;
     text-transform: capitalize;
-    margin: 0;
 
     @media screen and (min-width: 990px) {
         font-size: 3rem;
