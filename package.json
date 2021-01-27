@@ -2,7 +2,7 @@
   "name": "silhouette",
   "version": "1.0.0",
   "private": true,
-  "description": "silhouette",
+  "description": "A portfolio made with Gatsby.",
   "author": "znu",
   "keywords": [
     "gatsby"
@@ -19,7 +19,6 @@
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.31.0",
     "gatsby-plugin-react-helmet": "^3.9.0",
-    "gatsby-plugin-sass": "^2.8.0",
     "gatsby-plugin-styled-components": "^3.9.0",
     "node-sass": "^5.0.0",
     "react": "^16.13.1",
