@@ -12,7 +12,6 @@ import { ThemeProvider } from 'styled-components';
 
 import ThemeContext from 'src/context/ThemeContext';
 import useTheme from 'src/hooks/useTheme';
-import useMediaQuery from 'src/hooks/useMediaQuery';
 
 import GlobalStyle from 'src/theme/GlobalStyle';
 import SEO from 'src/components/Seo';
@@ -20,7 +19,6 @@ import SEO from 'src/components/Seo';
 const IndexPage = () => {
     const { theme, isLoaded } = useTheme();
     const [selectedTheme, setSelectedTheme] = useState(theme);
-    const [isLarge] = useMediaQuery('(min-width: 990px)');
 
     useEffect(() => {
         setSelectedTheme(theme);
@@ -41,7 +39,8 @@ const IndexPage = () => {
                             <About />
                             <Skills />
                             <Projects />
-                            {isLarge ? <NavVertical /> : <NavSmallScreen />}
+                            <NavVertical />
+                            <NavSmallScreen />
                             <Footer />
                         </ThemeContext.Provider>
                     </ThemeProvider>

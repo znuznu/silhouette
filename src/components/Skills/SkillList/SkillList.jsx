@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { IconContext } from '@react-icons/all-files';
-
-import useMediaQuery from 'src/hooks/useMediaQuery';
 
 const List = styled.ul`
     color: ${(props) => props.theme.global.primary};
@@ -56,10 +53,18 @@ const Content = styled.div`
     margin-bottom: 3rem;
 `;
 
+const Icon = styled.span`
+    font-size: 2.5rem;
+
+    display: flex;
+
+    @media screen and (min-width: 990px) {
+        font-size: 3rem;
+    }
+`;
+
 const SkillList = (props) => {
     const { skill, rtl } = props;
-
-    const [isLarge] = useMediaQuery('(min-width: 990px)');
 
     return (
         <Content>
@@ -69,11 +74,7 @@ const SkillList = (props) => {
             <List rtl={rtl}>
                 {skill.skills.map((skill) => (
                     <Element key={skill.title} rtl={rtl}>
-                        <IconContext.Provider
-                            value={{ size: isLarge ? '3.5rem' : '2.5rem', margin: 0 }}
-                        >
-                            {skill.icon}
-                        </IconContext.Provider>
+                        <Icon>{skill.icon}</Icon>
                     </Element>
                 ))}
             </List>

@@ -8,9 +8,10 @@ import { CgHome } from '@react-icons/all-files/cg/CgHome';
 import { CgProfile } from '@react-icons/all-files/cg/CgProfile';
 import { CgWebsite } from '@react-icons/all-files/cg/CgWebsite';
 
+import ThemeSwitcher from './common/ThemeSwitcher';
+
 import useWindowSize from 'src/hooks/useWindowSize';
 import useScrollPosition from 'src/hooks/useScrollPosition';
-import ThemeSwitcher from './common/ThemeSwitcher';
 
 const Container = styled.div`
     z-index: 100;
@@ -19,6 +20,10 @@ const Container = styled.div`
     right: 1rem;
     transform: translate(0%, -50%);
     width: 7.5rem;
+
+    @media screen and (max-width: 990px) {
+        display: none;
+    }
 `;
 
 const Links = styled.ul`

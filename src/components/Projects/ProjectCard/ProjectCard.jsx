@@ -1,14 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 
 import PropTypes from 'prop-types';
 
-import { IconContext } from '@react-icons/all-files';
 import { VscTools } from '@react-icons/all-files/vsc/VscTools';
 import { IoOpenOutline } from '@react-icons/all-files/io5/IoOpenOutline';
-
-import useMediaQuery from 'src/hooks/useMediaQuery';
 
 const Card = styled.div`
     padding: 1rem;
@@ -65,6 +62,22 @@ const Skills = styled.div`
 
 const SkillIcon = styled.div`
     margin-right: 0.5rem;
+    font-size: 1.5rem;
+    display: flex;
+
+    @media screen and (min-width: 990px) {
+        font-size: 2rem;
+    }
+`;
+
+const Icon = styled.div`
+    color: ${(p) => p.theme.global.primary};
+    font-size: 1.5rem;
+    display: flex;
+
+    @media screen and (min-width: 990px) {
+        font-size: 1.8rem;
+    }
 `;
 
 const Header = styled.div`
@@ -75,59 +88,47 @@ const Header = styled.div`
 const ProjectCard = (props) => {
     const { project } = props;
 
-    const themeContext = useContext(ThemeContext);
-    const [isLarge] = useMediaQuery('(min-width: 990px)');
-
     return (
         <Card>
             <Header>
                 <Title>{project.title}</Title>
                 <Links>
-                    <IconContext.Provider
-                        value={{
-                            size: isLarge ? '1.8rem' : '1.5rem',
-                            color: themeContext.global.primary
-                        }}
-                    >
-                        {project.source ? (
-                            <Link
-                                href={project.source}
-                                target="_blank"
-                                title={'Link to the source code.'}
-                                rel="noopener noreferrer"
-                            >
-                                {project.sourceIcon}
-                            </Link>
-                        ) : (
+                    {project.source ? (
+                        <Link
+                            href={project.source}
+                            target="_blank"
+                            title={'Link to the source code'}
+                            rel="noopener noreferrer"
+                        >
+                            <Icon>{project.sourceIcon}</Icon>
+                        </Link>
+                    ) : (
+                        <Icon>
                             <VscTools />
-                        )}
+                        </Icon>
+                    )}
 
-                        {project.link && (
-                            <Link
-                                href={project.link}
-                                target="_blank"
-                                title={'Link to the project website.'}
-                                rel="noopener noreferrer"
-                            >
+                    {project.link && (
+                        <Link
+                            href={project.link}
+                            target="_blank"
+                            title={'Link to the project website'}
+                            rel="noopener noreferrer"
+                        >
+                            <Icon>
                                 <IoOpenOutline />
-                            </Link>
-                        )}
-                    </IconContext.Provider>
+                            </Icon>
+                        </Link>
+                    )}
                 </Links>
             </Header>
 
             <Description>{project.description}</Description>
 
             <Skills>
-                <IconContext.Provider
-                    value={{
-                        size: isLarge ? '2rem' : '1.5rem'
-                    }}
-                >
-                    {project.skills.map((skill) => (
-                        <SkillIcon key={skill.title}> {skill.icon}</SkillIcon>
-                    ))}
-                </IconContext.Provider>
+                {project.skills.map((skill) => (
+                    <SkillIcon key={skill.title}> {skill.icon}</SkillIcon>
+                ))}
             </Skills>
         </Card>
     );

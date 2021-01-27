@@ -9,6 +9,10 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 0 1rem 0 0.5rem;
+
+    @media screen and (max-width: 990px) {
+        display: none;
+    }
 `;
 
 const ContainerButtons = styled.div`

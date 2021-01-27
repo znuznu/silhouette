@@ -19,6 +19,10 @@ const Container = styled.div`
     display: flex;
     background-color: ${(props) => props.theme.global.secondary};
     justify-content: center;
+
+    @media screen and (min-width: 990px) {
+        display: none;
+    }
 `;
 
 const Links = styled.ul`

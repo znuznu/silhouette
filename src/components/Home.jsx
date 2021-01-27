@@ -2,14 +2,12 @@ import React, { useContext } from 'react';
 import styled, { css, keyframes, ThemeContext } from 'styled-components';
 import { IconContext } from '@react-icons/all-files';
 import { SiItchDotIo } from '@react-icons/all-files/si/SiItchDotIo';
-import { CgMouse } from '@react-icons/all-files/cg/CgMouse';
-import { CgScrollV } from '@react-icons/all-files/cg/CgScrollV';
+import { CgArrowDownO } from '@react-icons/all-files/cg/CgArrowDownO';
 import { SiGithub } from '@react-icons/all-files/si/SiGithub';
 
 import Header from 'src/components/Header';
 import Underline from 'src/components/common/Underline';
 
-import useMediaQuery from 'src/hooks/useMediaQuery';
 import useScrollPosition from 'src/hooks/useScrollPosition';
 
 const Container = styled.div`
@@ -76,11 +74,28 @@ const animationRotate = css`
 `;
 
 const ScrollIcon = styled.div`
+    color: ${(p) => p.theme.global.primary};
     display: flex;
     justify-content: center;
     height: 5rem;
     align-items: center;
     ${(p) => p.hasScrolled && animationRotate}
+    font-size: 2rem;
+
+    @media and screen (min-width: 990px) {
+        font-size: 2.5rem;
+    }
+`;
+
+const ExternalIcon = styled.div`
+    color: ${(p) => p.theme.global.primary};
+    font-size: 2.5rem;
+    display: flex;
+    margin: 'auto 0 auto 0';
+
+    @media screen and (min-width: 990px) {
+        font-size: 4.5rem;
+    }
 `;
 
 const EXTERNALS = [
@@ -98,12 +113,11 @@ const EXTERNALS = [
 
 const Home = () => {
     const themeContext = useContext(ThemeContext);
-    const [isLarge] = useMediaQuery('(min-width: 990px)');
     const { position } = useScrollPosition();
 
     return (
         <Container id={'home'}>
-            {isLarge && <Header />}
+            <Header />
             <Content>
                 <NameSection>
                     <Heading>
@@ -115,37 +129,22 @@ const Home = () => {
                         />
                         .
                     </Heading>
-                    <IconContext.Provider
-                        value={{
-                            size: isLarge ? '4.5rem' : '2.5rem',
-                            margin: 'auto 0 auto 0',
-                            color: themeContext.global.primary
-                        }}
-                    >
-                        <Icons>
-                            {EXTERNALS.map((external) => (
-                                <a
-                                    href={external.link}
-                                    target="_blank"
-                                    title={external.title}
-                                    rel="noopener noreferrer"
-                                    key={external.link}
-                                >
-                                    {external.icon}
-                                </a>
-                            ))}
-                        </Icons>
-                    </IconContext.Provider>
+                    <Icons>
+                        {EXTERNALS.map((external) => (
+                            <a
+                                href={external.link}
+                                target="_blank"
+                                title={external.title}
+                                rel="noopener noreferrer"
+                                key={external.link}
+                            >
+                                <ExternalIcon>{external.icon}</ExternalIcon>
+                            </a>
+                        ))}
+                    </Icons>
                 </NameSection>
                 <ScrollIcon hasScrolled={position.y > 0}>
-                    <IconContext.Provider
-                        value={{
-                            size: isLarge ? '2.5rem' : '2rem',
-                            color: themeContext.global.primary
-                        }}
-                    >
-                        {isLarge ? <CgMouse /> : <CgScrollV />}
-                    </IconContext.Provider>
+                    <CgArrowDownO />
                 </ScrollIcon>
             </Content>
         </Container>

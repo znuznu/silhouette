@@ -60,8 +60,8 @@ const About = () => {
                 related to Java and JavaScript. I'm not a designer but I value simple and
                 clean UX/UI. <br />
                 <br />
-                In my free time, I enjoy <em>trying</em> to create short 2D games,
-                watching some cool{' '}
+                In my free time, I enjoy <em>trying</em> to create cool and short 2D
+                games, watching some cool{' '}
                 <Link
                     href="https://www.imdb.com/title/tt0120863/"
                     target="_blank"
@@ -70,7 +70,7 @@ const About = () => {
                 >
                     movies
                 </Link>{' '}
-                and{' '}
+                or{' '}
                 <Link
                     href="https://www.imdb.com/title/tt0098936/"
                     target="_blank"
@@ -90,7 +90,8 @@ const About = () => {
                 .
                 <br />
                 <br />
-                This portfolio is a way to show some of my work, I hope you'll enjoy it.
+                This portfolio is a way to show some of my personal work, I hope you'll
+                have a fun ride.
             </Text>
         </Container>
     );
