@@ -82,6 +82,7 @@ const About = () => {
                 and getting lost on{' '}
                 <Link
                     href="https://www.reddit.com/r/aww"
+                    target="_blank"
                     title={'Link to the cutest subreddit'}
                     rel="noopener noreferrer"
                 >
