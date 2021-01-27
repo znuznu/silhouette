@@ -5,7 +5,7 @@ import About from 'src/components/About';
 import Skills from 'src/components/Skills/Skills';
 import Projects from 'src/components/Projects/Projects';
 import NavVertical from 'src/components/NavVertical';
-import NavSmall from 'src/components/NavSmall';
+import NavSmallScreen from 'src/components/NavSmallScreen';
 import Footer from '../components/Footer';
 
 import { ThemeProvider } from 'styled-components';
@@ -41,7 +41,7 @@ const IndexPage = () => {
                             <About />
                             <Skills />
                             <Projects />
-                            {isLarge ? <NavVertical /> : <NavSmall />}
+                            {isLarge ? <NavVertical /> : <NavSmallScreen />}
                             <Footer />
                         </ThemeContext.Provider>
                     </ThemeProvider>

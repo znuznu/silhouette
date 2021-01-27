@@ -1,6 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: 'Silhouette',
+        titleTemplate: '%s, a portfolio by Arthur Fröhlich.',
         description: 'My simple portfolio.',
         url: 'https://znuznu.github.io/silhouette/'
     },

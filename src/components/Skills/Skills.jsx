@@ -86,8 +86,8 @@ const SKILLS = {
             { title: 'Java', icon: <SiJava /> },
             { title: 'Spring Boot 2', icon: <SiSpring /> },
             { title: 'PostgreSQL', icon: <SiPostgresql /> },
-            { title: 'Python', icon: <SiPython /> },
-            { title: 'Node.js', icon: <SiNodeDotJs /> }
+            { title: 'Node.js', icon: <SiNodeDotJs /> },
+            { title: 'Python', icon: <SiPython /> }
         ]
     },
     devops: {

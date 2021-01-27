@@ -51,7 +51,7 @@ const Icon = styled.div`
     }
 `;
 
-const NavVertical = () => {
+const NavSmallScreen = () => {
     const themeContext = useContext(ThemeContext);
 
     // meh.
@@ -106,4 +106,4 @@ const NavVertical = () => {
     );
 };
 
-export default NavVertical;
+export default NavSmallScreen;

@@ -9,6 +9,7 @@ const query = graphql`
         site {
             siteMetadata {
                 defaultTitle: title
+                titleTemplate
                 defaultDescription: description
                 siteUrl: url
             }
@@ -21,7 +22,12 @@ const SEO = (props) => {
     const { pathname } = useLocation();
     const { site } = useStaticQuery(query);
 
-    const { defaultTitle, defaultDescription, siteUrl } = site.siteMetadata;
+    const {
+        defaultTitle,
+        defaultDescription,
+        titleTemplate,
+        siteUrl
+    } = site.siteMetadata;
 
     const seo = {
         title: title || defaultTitle,
@@ -30,7 +36,7 @@ const SEO = (props) => {
     };
 
     return (
-        <Helmet title={seo.title}>
+        <Helmet title={seo.title} titleTemplate={titleTemplate}>
             <meta name="description" content={seo.description} />
             {seo.url && <meta property="og:url" content={seo.url} />}
             {seo.title && <meta property="og:title" content={seo.title} />}

@@ -41,6 +41,12 @@ const Text = styled.p`
     }
 `;
 
+const Link = styled.a`
+    font-weight: bold;
+    text-decoration: none;
+    color: ${(p) => p.theme.global.primary};
+`;
+
 const About = () => {
     const themeContext = useContext(ThemeContext);
 
@@ -52,7 +58,14 @@ const About = () => {
             <Text>
                 I'm a full stack developer based in Paris. I'm fluent with technologies
                 related to Java and JavaScript. I'm not a designer but I value simple and
-                clean UX/UI.
+                clean UX/UI. <br />
+                <br />
+                In my free time, I enjoy <em>trying</em> to create short 2D games,
+                watching some dark mood movies and getting lost on{' '}
+                <Link href="https://www.reddit.com/r/aww">reddit</Link>.
+                <br />
+                <br />
+                This portfolio is a way to show some of my work, I hope you'll enjoy it.
             </Text>
         </Container>
     );

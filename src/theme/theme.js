@@ -5,11 +5,11 @@ export const dark = {
     },
     global: {
         primary: 'white',
-        secondary: 'black',
-        bgColor: 'black',
+        secondary: '#121212',
+        bgColor: '#121212',
         developer: ['#319795', '#805AD5']
     },
-    container: { backgroundColor: 'black' },
+    container: { backgroundColor: '#121212' },
     section: {
         colors: {
             home: '#319795',
@@ -23,10 +23,10 @@ export const dark = {
 export const light = {
     type: 'light',
     icon: {
-        color: 'black'
+        color: '#121212'
     },
     global: {
-        primary: 'black',
+        primary: '#121212',
         secondary: 'white',
         bgColor: 'white',
         developer: ['#81E6D9', '#D6BCFA']
