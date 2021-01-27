@@ -6,7 +6,7 @@ import Skills from 'src/components/Skills/Skills';
 import Projects from 'src/components/Projects/Projects';
 import NavVertical from 'src/components/NavVertical';
 import NavSmallScreen from 'src/components/NavSmallScreen';
-import Footer from '../components/Footer';
+import Footer from 'src/components/Footer';
 
 import { ThemeProvider } from 'styled-components';
 

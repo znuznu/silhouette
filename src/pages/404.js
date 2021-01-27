@@ -1,52 +1,52 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-// styles
-const pageStyles = {
-    color: '#232129',
-    padding: '96px',
-    fontFamily: '-apple-system, Roboto, sans-serif, serif'
-};
-const headingStyles = {
-    marginTop: 0,
-    marginBottom: 64,
-    maxWidth: 320
-};
+import styled, { ThemeProvider } from 'styled-components';
 
-const paragraphStyles = {
-    marginBottom: 48
-};
-const codeStyles = {
-    color: '#8A6534',
-    padding: 4,
-    backgroundColor: '#FFF4DB',
-    fontSize: '1.25rem',
-    borderRadius: 4
-};
+import GlobalStyle from 'src/theme/GlobalStyle';
+import useTheme from 'src/hooks/useTheme';
 
-// markup
+const Heading = styled.h1`
+    font-family: 'Kanit';
+    font-size: 6rem;
+    color: ${(p) => p.theme.global.primary};
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+
+    @media screen and (min-width: 990px) {
+        font-size: 10rem;
+        padding: 0 2rem;
+    }
+`;
+
+const Text = styled.p`
+    font-family: 'Kanit';
+    font-size: 2rem;
+    color: ${(p) => p.theme.global.primary};
+    text-decoration: none;
+    text-align: center;
+
+    @media screen and (min-width: 990px) {
+        font-size: 4rem;
+        padding: 0 2rem;
+    }
+`;
+
 const NotFoundPage = () => {
+    const { theme, isLoaded } = useTheme();
+
     return (
-        <main style={pageStyles}>
-            <title>Not found</title>
-            <h1 style={headingStyles}>Page not found</h1>
-            <p style={paragraphStyles}>
-                Sorry{' '}
-                <span role="img" aria-label="Pensive emoji">
-                    😔
-                </span>{' '}
-                we couldn’t find what you were looking for.
-                <br />
-                {process.env.NODE_ENV === 'development' ? (
-                    <>
-                        <br />
-                        Try creating a page in <code style={codeStyles}>src/pages/</code>.
-                        <br />
-                    </>
-                ) : null}
-                <br />
-                <Link to="/">Go home</Link>.
-            </p>
+        <main>
+            {isLoaded && (
+                <ThemeProvider theme={theme}>
+                    <GlobalStyle />
+                    <Heading>404</Heading>
+                    <Text>
+                        <Link to="/">Go home</Link>
+                    </Text>
+                </ThemeProvider>
+            )}
         </main>
     );
 };
