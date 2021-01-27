@@ -32,11 +32,13 @@ const Element = styled.li`
 `;
 
 const Type = styled.h4`
-    margin: 0;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
     font-family: 'Kanit';
     font-size: 1.8rem;
-    text-transform: capitalize;
-    color: ${(props) => props.theme.global.primary};
+    display: inline-block;
+    color: ${(props) => props.theme.global.secondary};
+    background-color: ${(props) => props.theme.global.primary};
     ${(props) =>
         props.rtl
             ? `display: flex;

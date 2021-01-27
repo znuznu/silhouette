@@ -67,7 +67,7 @@ const Heading = styled.h1`
 
 const SKILLS = {
     frontend: {
-        title: 'frontend',
+        title: '< frontend />',
         skills: [
             { title: 'React', icon: <SiReact /> },
             { title: 'Angular', icon: <SiAngular /> },
@@ -81,7 +81,7 @@ const SKILLS = {
         ]
     },
     backend: {
-        title: 'backend',
+        title: '< backend />',
         skills: [
             { title: 'Java', icon: <SiJava /> },
             { title: 'Spring Boot 2', icon: <SiSpring /> },
@@ -91,7 +91,7 @@ const SKILLS = {
         ]
     },
     devops: {
-        title: 'devops',
+        title: '< devops />',
         skills: [
             { title: 'Git', icon: <SiGit /> },
             { title: 'Docker', icon: <SiDocker /> },
