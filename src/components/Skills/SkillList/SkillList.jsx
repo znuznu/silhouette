@@ -33,7 +33,6 @@ const Element = styled.li`
 
 const Type = styled.h2`
     margin-bottom: 1rem;
-    padding: 0 0.5rem;
     font-family: 'Kanit';
     font-size: 1.8rem;
     ${(props) =>

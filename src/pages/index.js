@@ -15,6 +15,7 @@ import useTheme from 'src/hooks/useTheme';
 import useMediaQuery from 'src/hooks/useMediaQuery';
 
 import GlobalStyle from 'src/theme/GlobalStyle';
+import SEO from 'src/components/Seo';
 
 const IndexPage = () => {
     const { theme, isLoaded } = useTheme();
@@ -34,6 +35,7 @@ const IndexPage = () => {
                         <ThemeContext.Provider
                             value={{ selectedTheme, setSelectedTheme }}
                         >
+                            <SEO />
                             <GlobalStyle />
                             <Home />
                             <About />
