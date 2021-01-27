@@ -31,7 +31,7 @@ const Element = styled.li`
     ${(props) => (props.rtl ? 'margin-left: 1.5rem;' : 'margin-right: 1.5rem;')};
 `;
 
-const Type = styled.h4`
+const Type = styled.h2`
     margin-bottom: 1rem;
     padding: 0 0.5rem;
     font-family: 'Kanit';

@@ -34,7 +34,7 @@ const ThemeSwitcher = (props) => {
 
     return (
         <IconContext.Provider value={{ size, margin: 'auto 0 auto 0' }}>
-            <Button onClick={handleClick}>
+            <Button aria-label="Switch theme" onClick={handleClick}>
                 {theme && theme.type === 'dark' ? <CgSun /> : <CgMoon />}
             </Button>
         </IconContext.Provider>
