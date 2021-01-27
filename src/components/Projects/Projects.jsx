@@ -4,11 +4,13 @@ import styled, { ThemeContext } from 'styled-components';
 
 import { SiAngular } from '@react-icons/all-files/si/SiAngular';
 import { SiReact } from '@react-icons/all-files/si/SiReact';
+import { SiRedux } from '@react-icons/all-files/si/SiRedux';
 import { SiGatsby } from '@react-icons/all-files/si/SiGatsby';
 import { SiNpm } from '@react-icons/all-files/si/SiNpm';
 import { SiWebpack } from '@react-icons/all-files/si/SiWebpack';
 import { SiJavascript } from '@react-icons/all-files/si/SiJavascript';
 import { SiTypescript } from '@react-icons/all-files/si/SiTypescript';
+import { SiStyledComponents } from '@react-icons/all-files/si/SiStyledComponents';
 import { SiCss3 } from '@react-icons/all-files/si/SiCss3';
 import { SiHtml5 } from '@react-icons/all-files/si/SiHtml5';
 import { SiItchDotIo } from '@react-icons/all-files/si/SiItchDotIo';
@@ -117,11 +119,26 @@ const PROJECTS = [
             { title: 'React', icon: <SiReact /> },
             { title: 'JavaScript', icon: <SiJavascript /> },
             { title: 'HTML5', icon: <SiHtml5 /> },
-            { title: 'CSS3', icon: <SiCss3 /> }
+            { title: 'CSS3', icon: <SiCss3 /> },
+            { title: 'styled-components', icon: <SiStyledComponents /> }
         ],
         source: 'https://github.com/znuznu/silhouette',
         sourceIcon: <SiGithub />,
         description: "Portfolio, you're on it."
+    },
+    {
+        title: 'Toodou',
+        skills: [
+            { title: 'React', icon: <SiReact /> },
+            { title: 'Redux', icon: <SiRedux /> },
+            { title: 'JavaScript', icon: <SiJavascript /> },
+            { title: 'HTML5', icon: <SiHtml5 /> },
+            { title: 'CSS3', icon: <SiCss3 /> }
+        ],
+        source: 'https://github.com/znuznu/toodou',
+        sourceIcon: <SiGithub />,
+        link: 'https://znuznu.github.io/toodou/',
+        description: 'A task manager made with React and Redux (to improve).'
     }
 ];
 
