@@ -10,19 +10,6 @@ import { IoOpenOutline } from '@react-icons/all-files/io5/IoOpenOutline';
 
 import useMediaQuery from 'src/hooks/useMediaQuery';
 
-// I don't like using only one color
-const IconsColor = {
-    TypeScript: '#2F74C0',
-    JavaScript: '#EFD81D',
-    npm: '#CC3534',
-    Webpack: '#8ED6FB',
-    Java: '#5283A2',
-    Angular: '#DD0031',
-    Spring: '#6CB33E',
-    HTML5: '#F16529',
-    CSS3: '#1A82BB'
-};
-
 const Card = styled.div`
     padding: 1rem;
     box-shadow: 4px 4px 0px 4px ${(props) => props.theme.global.primary};
