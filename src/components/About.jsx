@@ -61,8 +61,33 @@ const About = () => {
                 clean UX/UI. <br />
                 <br />
                 In my free time, I enjoy <em>trying</em> to create short 2D games,
-                watching some dark mood movies and getting lost on{' '}
-                <Link href="https://www.reddit.com/r/aww">reddit</Link>.
+                watching some cool{' '}
+                <Link
+                    href="https://www.imdb.com/title/tt0120863/"
+                    target="_blank"
+                    title={'Link to one of the greatest movie'}
+                    rel="noopener noreferrer"
+                >
+                    movies
+                </Link>{' '}
+                and{' '}
+                <Link
+                    href="https://www.imdb.com/title/tt0098936/"
+                    target="_blank"
+                    title={'Link to the greatest TV show'}
+                    rel="noopener noreferrer"
+                >
+                    shows
+                </Link>{' '}
+                and getting lost on{' '}
+                <Link
+                    href="https://www.reddit.com/r/aww"
+                    title={'Link to the cutest subreddit'}
+                    rel="noopener noreferrer"
+                >
+                    reddit
+                </Link>
+                .
                 <br />
                 <br />
                 This portfolio is a way to show some of my work, I hope you'll enjoy it.

@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import styled, { ThemeContext } from 'styled-components';
 
 import PropTypes from 'prop-types';
 
 import { IconContext } from '@react-icons/all-files';
-import { GrTools } from '@react-icons/all-files/gr/GrTools';
+import { VscTools } from '@react-icons/all-files/vsc/VscTools';
 import { IoOpenOutline } from '@react-icons/all-files/io5/IoOpenOutline';
 
 import useMediaQuery from 'src/hooks/useMediaQuery';
@@ -99,7 +99,7 @@ const ProjectCard = (props) => {
                                 {project.sourceIcon}
                             </Link>
                         ) : (
-                            <GrTools />
+                            <VscTools />
                         )}
 
                         {project.link && (
