@@ -36,9 +36,6 @@ const Type = styled.h4`
     padding: 0 0.5rem;
     font-family: 'Kanit';
     font-size: 1.8rem;
-    display: inline-block;
-    color: ${(props) => props.theme.global.secondary};
-    background-color: ${(props) => props.theme.global.primary};
     ${(props) =>
         props.rtl
             ? `display: flex;
@@ -48,6 +45,12 @@ const Type = styled.h4`
     @media screen and (min-width: 990px) {
         font-size: 3rem;
     }
+`;
+
+const Text = styled.span`
+    color: ${(props) => props.theme.global.secondary};
+    background-color: ${(props) => props.theme.global.primary};
+    padding: 0 0.5rem;
 `;
 
 const Content = styled.div`
@@ -61,7 +64,9 @@ const SkillList = (props) => {
 
     return (
         <Content>
-            <Type rtl={rtl}>{skill.title}</Type>
+            <Type rtl={rtl}>
+                <Text>{skill.title}</Text>
+            </Type>
             <List rtl={rtl}>
                 {skill.skills.map((skill) => (
                     <Element key={skill.title} rtl={rtl}>
@@ -70,7 +75,6 @@ const SkillList = (props) => {
                         >
                             {skill.icon}
                         </IconContext.Provider>
-                        {/* <SkillName>{skill.title}</SkillName> */}
                     </Element>
                 ))}
             </List>

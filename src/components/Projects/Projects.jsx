@@ -28,9 +28,12 @@ const Container = styled.div`
     padding-top: 64px;
 
     @media screen and (min-width: 990px) {
-        height: 100vh;
         margin: 0 8.8rem 0 8.8rem;
         padding-top: 0;
+    }
+
+    @media screen and (min-width: 1100px) {
+        height: 100vh;
     }
 `;
 
@@ -38,7 +41,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
 
-    @media screen and (min-width: 990px) {
+    @media screen and (min-width: 1100px) {
         margin: -2rem 0 0 -2rem;
         width: calc(100% + 2rem);
     }
