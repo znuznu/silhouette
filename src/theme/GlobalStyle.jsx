@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${(props) => props.theme.global.bgColor}; 
+    background-color: ${(props) => props.theme.global.bg}; 
   }
 
   @font-face {

@@ -17,7 +17,7 @@ const Container = styled.div`
     top: 0;
     width: 100%;
     display: flex;
-    background-color: ${(props) => props.theme.global.secondary};
+    background-color: ${(props) => props.theme.global.bg};
     justify-content: center;
 
     @media screen and (min-width: 990px) {

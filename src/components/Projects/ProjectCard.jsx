@@ -53,13 +53,20 @@ const Description = styled.p`
 `;
 
 const Skills = styled.div`
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, 24px [col-start]);
+
+    @media screen and (min-width: 990px) {
+        grid-template-columns: repeat(auto-fill, 32px [col-start]);
+    }
 `;
 
 const SkillIcon = styled.div`
-    margin-right: 0.5rem;
     font-size: 1.5rem;
+    color: ${(props) => props.theme.global.primary};
+    margin: auto 0;
     display: flex;
 
     @media screen and (min-width: 990px) {

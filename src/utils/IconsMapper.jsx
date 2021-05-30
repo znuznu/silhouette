@@ -52,7 +52,6 @@ export const iconsMapper = {
     maven: <SiApachemaven />,
     sonar: <SiSonarqube />,
     docker: <SiDocker />,
-    maven: <SiApachemaven />,
     gitlab: <SiGitlab />,
     git: <SiGit />
 };

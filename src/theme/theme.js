@@ -6,10 +6,10 @@ export const dark = {
     global: {
         primary: 'white',
         secondary: '#121212',
-        bgColor: '#121212',
+        bg: '#000000',
         developer: ['#319795', '#805AD5']
     },
-    container: { backgroundColor: '#121212' },
+    container: { backgroundColor: '#000000' },
     section: {
         colors: {
             home: '#319795',
@@ -28,7 +28,7 @@ export const light = {
     global: {
         primary: '#121212',
         secondary: 'white',
-        bgColor: 'white',
+        bg: 'white',
         developer: ['#81E6D9', '#D6BCFA']
     },
     container: { backgroundColor: 'white' },

@@ -56,12 +56,12 @@ const About = () => {
                 <Underline text={'about'} colors={[themeContext.section.colors.about]} />
             </Heading>
             <Text>
-                I'm a full stack developer based in Paris. I'm fluent with technologies
-                related to Java and JavaScript. I'm not a designer but I value simple and
-                clean UX/UI. <br />
+                I'm a full stack developer based in Paris. I like working with
+                technologies related to JavaScript and Java. I'm not a designer but I
+                value simple and clean UX/UI. <br />
                 <br />
-                In my free time, I enjoy <em>trying</em> to create cool and short 2D
-                games, watching some cool{' '}
+                In my free internet time, I enjoy <em>trying</em> to create cool and short
+                2D games, watching some cool{' '}
                 <Link
                     href="https://www.imdb.com/title/tt0120863/"
                     target="_blank"
@@ -91,8 +91,8 @@ const About = () => {
                 .
                 <br />
                 <br />
-                This portfolio is a way to show some of my personal work, I hope you'll
-                have a fun ride.
+                This portfolio is a way to show some of my personal work, hope you'll have
+                a fun ride.
             </Text>
         </Container>
     );

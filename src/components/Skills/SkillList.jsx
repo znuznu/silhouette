@@ -1,53 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import iconsMapper from 'src/utils/IconsMapper';
 
-const List = styled.ul`
-    color: ${(props) => props.theme.global.primary};
-    list-style: none;
-    display: inline-flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
+const SkillsGrid = styled.div`
+    display: grid;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, 64px [col-start]);
 
     @media screen and (min-width: 990px) {
-        margin: -1rem 0 0 -1rem;
-        width: calc(100% + 1rem);
-        justify-content: ${(props) => (props.rtl ? 'flex-end' : 'start')};
+        row-gap: 1rem;
+        column-gap: 2rem;
     }
 `;
 
-const Element = styled.li`
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 0 0 1rem;
+const SkillCard = styled.div`
+    width: 36px;
+    height: 36px;
     padding: 0.5rem;
     box-shadow: 2px 2px 0px 2px ${(props) => props.theme.global.primary};
     border-radius: 4px;
-    ${(props) => (props.rtl ? 'margin-left: 1.5rem;' : 'margin-right: 1.5rem;')};
+
+    @media screen and (min-width: 990px) {
+        width: 48px;
+        height: 48px;
+    }
 `;
 
 const Type = styled.h2`
+    display: inline-flex;
+    padding: 0 0.5rem;
     margin-bottom: 1rem;
     font-family: 'Kanit';
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     ${(props) =>
         props.rtl
             ? `display: flex;
     justify-content: flex-end;`
-            : 'auto'}
-
-    @media screen and (min-width: 990px) {
-        font-size: 3rem;
-    }
-`;
-
-const Text = styled.span`
+            : 'auto'};
     color: ${(props) => props.theme.global.secondary};
     background-color: ${(props) => props.theme.global.primary};
-    padding: 0 0.5rem;
+
+    @media screen and (min-width: 990px) {
+        font-size: 2rem;
+    }
 `;
 
 const Content = styled.div`
@@ -57,6 +55,7 @@ const Content = styled.div`
 const Icon = styled.span`
     font-size: 2.5rem;
 
+    color: ${(props) => props.theme.global.primary};
     display: flex;
 
     @media screen and (min-width: 990px) {
@@ -69,16 +68,14 @@ const SkillList = (props) => {
 
     return (
         <Content>
-            <Type rtl={rtl}>
-                <Text>{skill.title}</Text>
-            </Type>
-            <List rtl={rtl}>
+            <Type rtl={rtl}>{skill.title}</Type>
+            <SkillsGrid>
                 {skill.skills.map((skill) => (
-                    <Element key={skill.title} rtl={rtl}>
+                    <SkillCard key={skill.title} rtl={rtl}>
                         <Icon>{iconsMapper[skill.icon]}</Icon>
-                    </Element>
+                    </SkillCard>
                 ))}
-            </List>
+            </SkillsGrid>
         </Content>
     );
 };

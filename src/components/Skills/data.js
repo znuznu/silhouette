@@ -18,10 +18,12 @@ const skills = {
     backend: {
         title: '< backend />',
         skills: [
-            { title: 'Java', icon: 'java' },
+            { title: 'Node.js', icon: 'nodeDotJs' },
             { title: 'Spring Boot 2', icon: 'spring' },
             { title: 'PostgreSQL', icon: 'postgreSQL' },
-            { title: 'Node.js', icon: 'nodeDotJs' },
+            { title: 'Redis', icon: 'redis' },
+            { title: 'GraphQL', icon: 'graphQL' },
+            { title: 'Java', icon: 'java' },
             { title: 'Python', icon: 'python' }
         ]
     },

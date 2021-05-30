@@ -44,6 +44,20 @@ const Heading = styled.h1`
     }
 `;
 
+const Text = styled.p`
+    font-family: 'Cabin';
+    color: ${(props) => props.theme.global.primary};
+    font-size: 1.2rem;
+    text-align: justify;
+    text-justify: auto;
+    max-width: 50rem;
+    margin: 0;
+
+    @media screen and (min-width: 990px) {
+        font-size: 1.5rem;
+    }
+`;
+
 const Skills = () => {
     const themeContext = useContext(ThemeContext);
 
@@ -55,6 +69,7 @@ const Skills = () => {
                     colors={[themeContext.section.colors.skills]}
                 />
             </Heading>
+            <Text>All of the following are technologies I'm familiar with.</Text>
             <Content>
                 <SkillList skill={skills.frontend} />
                 <SkillList skill={skills.backend} />

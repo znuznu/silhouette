@@ -25,7 +25,7 @@ export const projects = [
         ],
         source: 'https://github.com/znuznu/randemon',
         sourceIcon: 'github',
-        description: 'A random Pokemon team generator.',
+        description: 'A random Pokemon team generator using the PokéAPI.',
         link: 'https://randemon.vercel.app/'
     },
     {

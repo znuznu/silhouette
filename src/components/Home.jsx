@@ -81,7 +81,7 @@ const ScrollIcon = styled.div`
     ${(p) => p.hasScrolled && animationRotate}
     font-size: 2rem;
 
-    @media and screen (min-width: 990px) {
+    @media screen and (min-width: 990px) {
         font-size: 2.5rem;
     }
 `;
