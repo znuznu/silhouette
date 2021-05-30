@@ -6,21 +6,18 @@ import PropTypes from 'prop-types';
 
 import { VscTools } from '@react-icons/all-files/vsc/VscTools';
 import { IoOpenOutline } from '@react-icons/all-files/io5/IoOpenOutline';
+import iconsMapper from 'src/utils/IconsMapper';
 
 const Card = styled.div`
     padding: 1rem;
     box-shadow: 4px 4px 0px 4px ${(props) => props.theme.global.primary};
     border-radius: 2px;
     color: ${(props) => props.theme.global.primary};
-    width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0.5rem 0 1rem 0;
 
-    @media screen and (min-width: 1100px) {
-        margin: 2rem 0 0 2rem;
-        max-width: 20rem;
-        min-width: 20rem;
+    @media screen and (min-width: 990px) {
+        width: 20rem;
     }
 `;
 
@@ -100,7 +97,7 @@ const ProjectCard = (props) => {
                             title={'Link to the source code'}
                             rel="noopener noreferrer"
                         >
-                            <Icon>{project.sourceIcon}</Icon>
+                            <Icon>{iconsMapper[project.sourceIcon]}</Icon>
                         </Link>
                     ) : (
                         <Icon>
@@ -127,7 +124,7 @@ const ProjectCard = (props) => {
 
             <Skills>
                 {project.skills.map((skill) => (
-                    <SkillIcon key={skill.title}> {skill.icon}</SkillIcon>
+                    <SkillIcon key={skill.title}>{iconsMapper[skill.icon]}</SkillIcon>
                 ))}
             </Skills>
         </Card>

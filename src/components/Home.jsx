@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import styled, { css, keyframes, ThemeContext } from 'styled-components';
-import { IconContext } from '@react-icons/all-files';
 import { SiItchDotIo } from '@react-icons/all-files/si/SiItchDotIo';
 import { CgArrowDownO } from '@react-icons/all-files/cg/CgArrowDownO';
 import { SiGithub } from '@react-icons/all-files/si/SiGithub';

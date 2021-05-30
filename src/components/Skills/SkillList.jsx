@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import iconsMapper from 'src/utils/IconsMapper';
 
 const List = styled.ul`
     color: ${(props) => props.theme.global.primary};
@@ -74,7 +75,7 @@ const SkillList = (props) => {
             <List rtl={rtl}>
                 {skill.skills.map((skill) => (
                     <Element key={skill.title} rtl={rtl}>
-                        <Icon>{skill.icon}</Icon>
+                        <Icon>{iconsMapper[skill.icon]}</Icon>
                     </Element>
                 ))}
             </List>

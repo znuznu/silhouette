@@ -2,31 +2,10 @@ import React, { useContext } from 'react';
 
 import styled, { ThemeContext } from 'styled-components';
 
-import { SiAngular } from '@react-icons/all-files/si/SiAngular';
-import { SiReact } from '@react-icons/all-files/si/SiReact';
-import { SiYarn } from '@react-icons/all-files/si/SiYarn';
-import { SiNpm } from '@react-icons/all-files/si/SiNpm';
-import { SiWebpack } from '@react-icons/all-files/si/SiWebpack';
-import { SiJavascript } from '@react-icons/all-files/si/SiJavascript';
-import { SiTypescript } from '@react-icons/all-files/si/SiTypescript';
-import { SiCss3 } from '@react-icons/all-files/si/SiCss3';
-import { SiHtml5 } from '@react-icons/all-files/si/SiHtml5';
-
-import { SiJava } from '@react-icons/all-files/si/SiJava';
-import { SiSpring } from '@react-icons/all-files/si/SiSpring';
-import { SiPostgresql } from '@react-icons/all-files/si/SiPostgresql';
-import { SiPython } from '@react-icons/all-files/si/SiPython';
-import { SiNodeDotJs } from '@react-icons/all-files/si/SiNodeDotJs';
-
-import { SiGit } from '@react-icons/all-files/si/SiGit';
-import { SiApachemaven } from '@react-icons/all-files/si/SiApachemaven';
-import { SiDocker } from '@react-icons/all-files/si/SiDocker';
-import { SiSonarqube } from '@react-icons/all-files/si/SiSonarqube';
-import { SiGithub } from '@react-icons/all-files/si/SiGithub';
-import { SiGitlab } from '@react-icons/all-files/si/SiGitlab';
-
 import Underline from 'src/components/common/Underline';
-import SkillList from 'src/components/Skills/SkillList/SkillList';
+import SkillList from 'src/components/Skills/SkillList';
+
+import skills from './data';
 
 const Container = styled.div`
     margin: 0 1rem 0 1rem;
@@ -65,44 +44,6 @@ const Heading = styled.h1`
     }
 `;
 
-const SKILLS = {
-    frontend: {
-        title: '< frontend />',
-        skills: [
-            { title: 'React', icon: <SiReact /> },
-            { title: 'Angular', icon: <SiAngular /> },
-            { title: 'TypeScript', icon: <SiTypescript /> },
-            { title: 'JavaScript', icon: <SiJavascript /> },
-            { title: 'npm', icon: <SiNpm /> },
-            { title: 'yarn', icon: <SiYarn /> },
-            { title: 'Webpack', icon: <SiWebpack /> },
-            { title: 'HTML', icon: <SiHtml5 /> },
-            { title: 'CSS/SCSS', icon: <SiCss3 /> }
-        ]
-    },
-    backend: {
-        title: '< backend />',
-        skills: [
-            { title: 'Java', icon: <SiJava /> },
-            { title: 'Spring Boot 2', icon: <SiSpring /> },
-            { title: 'PostgreSQL', icon: <SiPostgresql /> },
-            { title: 'Node.js', icon: <SiNodeDotJs /> },
-            { title: 'Python', icon: <SiPython /> }
-        ]
-    },
-    devops: {
-        title: '< devops />',
-        skills: [
-            { title: 'Git', icon: <SiGit /> },
-            { title: 'Docker', icon: <SiDocker /> },
-            { title: 'Maven', icon: <SiApachemaven /> },
-            { title: 'Gitlab CI/CD', icon: <SiGitlab /> },
-            { title: 'Github Actions', icon: <SiGithub /> },
-            { title: 'SonarQube', icon: <SiSonarqube /> }
-        ]
-    }
-};
-
 const Skills = () => {
     const themeContext = useContext(ThemeContext);
 
@@ -115,9 +56,9 @@ const Skills = () => {
                 />
             </Heading>
             <Content>
-                <SkillList skill={SKILLS.frontend} />
-                <SkillList skill={SKILLS.backend} />
-                <SkillList skill={SKILLS.devops} />
+                <SkillList skill={skills.frontend} />
+                <SkillList skill={skills.backend} />
+                <SkillList skill={skills.devops} />
             </Content>
         </Container>
     );

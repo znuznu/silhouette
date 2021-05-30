@@ -5,3 +5,4 @@ export const isBrowser = () => {
         window.document.createElement
     );
 };
+

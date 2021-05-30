@@ -115,7 +115,9 @@ const NavVertical = () => {
         }
     ]);
 
-    if (position.y < size.height) return null;
+    if (position.y < size.height) {
+        return null;
+    }
 
     const updateIndex = (index) => {
         setHoveredIndex(index);
@@ -143,7 +145,6 @@ const NavVertical = () => {
                             >
                                 <Icon>{section.icon}</Icon>
                                 {index === hoveredIndex && <Text>{section.text}</Text>}
-                                {/* <Text>{section.text}</Text> */}
                             </Link>
                         </Element>
                     ))}

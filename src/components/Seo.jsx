@@ -22,12 +22,8 @@ const SEO = (props) => {
     const { pathname } = useLocation();
     const { site } = useStaticQuery(query);
 
-    const {
-        defaultTitle,
-        defaultDescription,
-        titleTemplate,
-        siteUrl
-    } = site.siteMetadata;
+    const { defaultTitle, defaultDescription, titleTemplate, siteUrl } =
+        site.siteMetadata;
 
     const seo = {
         title: title || defaultTitle,
