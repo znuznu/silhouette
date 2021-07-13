@@ -94,5 +94,20 @@ export const projects = [
         link: 'https://znuznu.github.io/toodou/',
         description:
             'A task manager inspired by Trello made with React and Redux (in-progress).'
+    },
+    {
+        title: 'CHIP-8',
+        skills: [
+            { title: 'Rust', icon: 'rust' },
+            { title: 'WebAssembly', icon: 'wasm' },
+            { title: 'JavaScript', icon: 'javaScript' },
+            { title: 'HTML5', icon: 'html5' },
+            { title: 'CSS3', icon: 'css3' }
+        ],
+        source: 'https://github.com/znuznu/chip-8',
+        sourceIcon: 'github',
+        link: 'https://znuznu.github.io/chip-8/',
+        description:
+            'A CHIP-8 interpreter written in Rust and compiled in WebAssembly.'
     }
 ];

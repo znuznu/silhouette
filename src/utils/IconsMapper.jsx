@@ -12,6 +12,8 @@ import { SiStyledComponents } from '@react-icons/all-files/si/SiStyledComponents
 import { SiGraphql } from '@react-icons/all-files/si/SiGraphql';
 import { SiNodeDotJs } from '@react-icons/all-files/si/SiNodeDotJs';
 import { SiRedis } from '@react-icons/all-files/si/SiRedis';
+import { SiWebassembly } from '@react-icons/all-files/si/SiWebassembly';
+import { SiRust } from '@react-icons/all-files/si/SiRust';
 import { SiCss3 } from '@react-icons/all-files/si/SiCss3';
 import { SiHtml5 } from '@react-icons/all-files/si/SiHtml5';
 import { SiItchDotIo } from '@react-icons/all-files/si/SiItchDotIo';
@@ -41,6 +43,8 @@ export const iconsMapper = {
     styledComponents: <SiStyledComponents />,
     nodeDotJs: <SiNodeDotJs />,
     redis: <SiRedis />,
+    rust: <SiRust />,
+    wasm: <SiWebassembly />,
     css3: <SiCss3 />,
     html5: <SiHtml5 />,
     itchdotio: <SiItchDotIo />,

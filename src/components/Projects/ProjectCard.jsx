@@ -143,7 +143,7 @@ ProjectCard.propTypes = {
         title: PropTypes.string,
         skills: PropTypes.array,
         source: PropTypes.string,
-        sourceIcon: PropTypes.object,
+        sourceIcon: PropTypes.string,
         link: PropTypes.string,
         description: PropTypes.string
     }).isRequired
