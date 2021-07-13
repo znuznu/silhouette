@@ -30,6 +30,11 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.global.bg}; 
   }
 
+  ::selection{
+    background-color : ${(props) => props.theme.global.primary};
+    color : ${(props) => props.theme.global.secondary}
+  }
+
   @font-face {
     font-family: 'Kanit';
     src: local('Kanit'), local('Kanit'),
